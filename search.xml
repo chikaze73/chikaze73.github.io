@@ -97,6 +97,9 @@
 <p>\  反斜杠<br>`   反引号<br>*   星号<br>_   下划线<br>{}  花括号<br>[]  方括号<br>()  小括号<br>#   井字号<br>+   加号<br>-   减号<br>.   英文句点<br>!   感叹号<br><br/>  </p>
 <span id="more"></span>
 ]]></content>
+      <categories>
+        <category>extra</category>
+      </categories>
       <tags>
         <tag>markdown</tag>
       </tags>
