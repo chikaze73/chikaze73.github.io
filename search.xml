@@ -193,7 +193,7 @@
   </entry>
   <entry>
     <title>第二章-关系数据库</title>
-    <url>/2021/05/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <url>/2021/05/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
     <content><![CDATA[<h1 id="一、关系的完整性"><a href="#一、关系的完整性" class="headerlink" title="一、关系的完整性"></a>一、关系的完整性</h1><ol>
 <li>实体完整性：对主码的约束，主属性不能为空。  </li>
 <li>参照完整性：对外码的约束；关系与关系之间存在引用，外码，参照完整性规则。 <span id="more"></span>
