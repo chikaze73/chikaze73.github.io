@@ -355,25 +355,14 @@
 
       
         
-          
-            <p><strong>SQL的功能主要包括：数据定义，数据查询，数据操作，数据控制</strong><br>|SQL功能|对应命令|<br>|—-|—-|<br>|数据定义|create、drop、alter|<br>|数据查询|select|<br>|数据操纵|insert、update、delete|<br>|数据控制|grant、revoke、deny|<br><br> </p>
-<h1 id="一、数据库定义及维护"><a href="#一、数据库定义及维护" class="headerlink" title="一、数据库定义及维护"></a>一、数据库定义及维护</h1><h2 id="一-数据库定义"><a href="#一-数据库定义" class="headerlink" title="(一)数据库定义"></a>(一)数据库定义</h2><p>   <code>create database database_name</code>  </p>
-<h2 id="二-数据库维护"><a href="#二-数据库维护" class="headerlink" title="(二)数据库维护"></a>(二)数据库维护</h2><p><code>alter database</code>  </p>
-<h1 id="二、表定义及维护"><a href="#二、表定义及维护" class="headerlink" title="二、表定义及维护"></a>二、表定义及维护</h1><h2 id="一-表定义"><a href="#一-表定义" class="headerlink" title="(一)表定义"></a>(一)表定义</h2><p><code>create table table_name</code>  </p>
-<h2 id="二-表维护"><a href="#二-表维护" class="headerlink" title="(二)表维护"></a>(二)表维护</h2><blockquote>
-<p>alter table table_name<br>add<br>drop column<br>alter column<br><br>  </p>
-</blockquote>
-<h1 id="三、完整性定义及维护"><a href="#三、完整性定义及维护" class="headerlink" title="三、完整性定义及维护"></a>三、完整性定义及维护</h1><h2 id="一-完整性约束定义"><a href="#一-完整性约束定义" class="headerlink" title="(一)完整性约束定义"></a>(一)完整性约束定义</h2><p>增加约束  </p>
-<p>alter table table_name<br>add constraint constraint_name<br><br>  </p>
-<h3 id="1-实体完整性"><a href="#1-实体完整性" class="headerlink" title="(1)实体完整性"></a>(1)实体完整性</h3><p>可通过索引、unique约束等实现<br>eg1.为员工添加主码  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alter table 员工表  </span><br><span class="line">add constraint pk_yg primary key(员工编号)</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">eg2.为薪资表的薪级名称列添加unique约束  </span><br></pre></td></tr></table></figure>
-<p>alter table 薪资表<br>add constraint u_xinziname unique(薪级名称)  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;br&gt;</span><br><span class="line"></span><br><span class="line">### (2)用户自定义完整性  </span><br><span class="line">可以使用default、check 实现  </span><br><span class="line">其中一个列只能有一个default约束，该约束只能定义在一个列上。check约束可以对多列的取值关系做约束。如果只对新插入的数据实现约束，则可以在add前加入 with nocheck  </span><br><span class="line">&lt;br&gt;</span><br><span class="line"></span><br><span class="line">### (3)参照完整性  </span><br><span class="line">可以使用foreign key、触发器实现  </span><br><span class="line">eg.为员工表的薪级编号列添加外码约束，引用薪资表的薪级编号  </span><br></pre></td></tr></table></figure>
-<p>alter table 员工表<br>add constraint fk_xinji<br>foreign key(薪级编号) references 薪资表(薪级编号)  </p>
-<p>```<br><br></p>
-<h2 id="二-完整性约束维护"><a href="#二-完整性约束维护" class="headerlink" title="(二)完整性约束维护"></a>(二)完整性约束维护</h2><p>主要是删除和修改约束<br>修改约束可以通过先删除再添加</p>
-
-          
+          <p><strong>SQL的功能主要包括：数据定义，数据查询，数据操作，数据控制</strong>  </p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/05/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
