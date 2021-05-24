@@ -151,6 +151,45 @@
       </tags>
   </entry>
   <entry>
+    <title>第三章-SLQ语句(数据查询)</title>
+    <url>/2021/05/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SLQ%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2)/</url>
+    <content><![CDATA[<p>基本格式：<br><code>select...from...where...group by...having...order by... </code> </p>
+<span id="more"></span>
+<br>  
+
+<h1 id="一、单表查询"><a href="#一、单表查询" class="headerlink" title="一、单表查询"></a>一、单表查询</h1><p><code>select...from...</code><br>选择表中元组：where<br>确定范围：between and<br>确定集合：in<br>字符串通配：like<br>基本格式  <code>[not] like &#39;&lt;匹配串&gt;&#39; [escape &#39;&lt;转义字符&gt;&#39;]</code>  </p>
+<blockquote>
+<p>(1)_:匹配任一字符<br>(2)%:匹配任意长度字符<br>(3)[ ]:数据列表匹配任一字符成功，该like结果为true。如果字符是连续的，可以使用“-”代表中间部分。eg. a,b,c,d[a-d]<br>(4)[^]:表示不匹配任何[ ]中的字符。  </p>
+</blockquote>
+<p>空值查询：null<br>多重条件查询：and、or  其中and的运算级别高于or<br>对查询结果排序：order by [asc] [desc]<br>聚合函数：常用count(*)、sum()、avg()、max()、min()<br>对组进行选择：having  其后可跟列名、聚合函数作为条件表达式。<br><br>  </p>
+<h1 id="二、多表连接查询"><a href="#二、多表连接查询" class="headerlink" title="二、多表连接查询"></a>二、多表连接查询</h1><h2 id="1、内连接"><a href="#1、内连接" class="headerlink" title="1、内连接"></a>1、内连接</h2><p>join on<br>包括等值连接、非等值连接。其中等值连接去掉重复的列则为自然连接，如果连接的是两个相同的表则为自连接。  </p>
+<h2 id="2、外连接"><a href="#2、外连接" class="headerlink" title="2、外连接"></a>2、外连接</h2><p>应用于例如查看哪些商品没有人购买。包括全外连接、左外连接和右外连接。<br>全外连接：<code>full [outer] join...on</code><br>左外连接：<code>left [outer] join...on</code><br>右外连接：<code>right [outer] join...on</code><br>改变表在语句中的位置，左外连接和右外连接的查询结果可以一样。<br><code>select * from A1 right join A2 on A1.no = A2.no  </code><br><code>select * from A2 left join A1 on A1.no = A2.no  </code><br><br>  </p>
+<h1 id="三、子查询"><a href="#三、子查询" class="headerlink" title="三、子查询"></a>三、子查询</h1><h2 id="1、不相关子查询"><a href="#1、不相关子查询" class="headerlink" title="1、不相关子查询"></a>1、不相关子查询</h2><p>即内层查询条件不依赖于外层查询<br>eg.查询购买了”某某食品贸易部”经销的商品的学生和姓名<br><img src="/../../img/不相关子查询.png" width="400" height="200">  </p>
+<h2 id="2、相关子查询"><a href="#2、相关子查询" class="headerlink" title="2、相关子查询"></a>2、相关子查询</h2><p>即内层查询条件依赖于外层查询  </p>
+<h3 id="1-不带exists谓词的子查询"><a href="#1-不带exists谓词的子查询" class="headerlink" title="1)不带exists谓词的子查询"></a>1)不带exists谓词的子查询</h3><h3 id="2-带exists谓词的子查询"><a href="#2-带exists谓词的子查询" class="headerlink" title="2)带exists谓词的子查询"></a>2)带exists谓词的子查询</h3><p>eg.查询购买了商品的学生信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from student where exists  </span><br><span class="line">    (select * from SaleBill where sno &#x3D; Student.no)</span><br></pre></td></tr></table></figure>
+
+<br>  
+
+<h2 id="3、集合查询"><a href="#3、集合查询" class="headerlink" title="3、集合查询"></a>3、集合查询</h2><p>union、交操作intersect、差操作except<br>eg.查询MIS专业或/(并且)出生晚于1999年学生的信息  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from student where major &#x3D; &#39;MIS&#39;  </span><br><span class="line">union&#x2F;(intersect)  </span><br><span class="line">selcet from student where birthyear &gt; 1999</span><br></pre></td></tr></table></figure>
+
+<br>  
+
+
+<h2 id="4、基于派生表查询"><a href="#4、基于派生表查询" class="headerlink" title="4、基于派生表查询"></a>4、基于派生表查询</h2><p>及某张表是由select语句构成的<br>eg.查询购买了GN0002的商品的学生信息  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from student S join  </span><br><span class="line"> (select sno,goodno from Salebill where  goodsno &#x3D; &#39;GN0002&#39;) AS SA_sno on S.sno &#x3D; SA_sno</span><br></pre></td></tr></table></figure>
+
+<br>  
+
+
+<h2 id="5、使用top选择结果集元组"><a href="#5、使用top选择结果集元组" class="headerlink" title="5、使用top选择结果集元组"></a>5、使用top选择结果集元组</h2><p>一般格式：<code>top n [percent] [with ties]</code><br>eg.查询年龄最大的三位学生的信息  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select top 3 with ties * from student  </span><br><span class="line">order by birthyear</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>第一章 数据库系统概述</title>
     <url>/2021/05/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<h1 id="一、数据库系统基本概念"><a href="#一、数据库系统基本概念" class="headerlink" title="一、数据库系统基本概念"></a>一、数据库系统基本概念</h1><ol>
@@ -187,45 +226,6 @@
       <categories>
         <category>数据库原理及应用</category>
       </categories>
-      <tags>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第三章-SLQ语句(数据查询)</title>
-    <url>/2021/05/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SLQ%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2)/</url>
-    <content><![CDATA[<p>基本格式：<br><code>select...from...where...group by...having...order by... </code> </p>
-<span id="more"></span>
-<br>  
-
-<h1 id="一、单表查询"><a href="#一、单表查询" class="headerlink" title="一、单表查询"></a>一、单表查询</h1><p><code>select...from...</code><br>选择表中元组：where<br>确定范围：between and<br>确定集合：in<br>字符串通配：like<br>基本格式  <code>[not] like &#39;&lt;匹配串&gt;&#39; [escape &#39;&lt;转义字符&gt;&#39;]</code>  </p>
-<blockquote>
-<p>(1)_:匹配任一字符<br>(2)%:匹配任意长度字符<br>(3)[ ]:数据列表匹配任一字符成功，该like结果为true。如果字符是连续的，可以使用“-”代表中间部分。eg. a,b,c,d[a-d]<br>(4)[^]:表示不匹配任何[ ]中的字符。  </p>
-</blockquote>
-<p>空值查询：null<br>多重条件查询：and、or  其中and的运算级别高于or<br>对查询结果排序：order by [asc] [desc]<br>聚合函数：常用count(*)、sum()、avg()、max()、min()<br>对组进行选择：having  其后可跟列名、聚合函数作为条件表达式。<br><br>  </p>
-<h1 id="二、多表连接查询"><a href="#二、多表连接查询" class="headerlink" title="二、多表连接查询"></a>二、多表连接查询</h1><h2 id="1、内连接"><a href="#1、内连接" class="headerlink" title="1、内连接"></a>1、内连接</h2><p>join on<br>包括等值连接、非等值连接。其中等值连接去掉重复的列则为自然连接，如果连接的是两个相同的表则为自连接。  </p>
-<h2 id="2、外连接"><a href="#2、外连接" class="headerlink" title="2、外连接"></a>2、外连接</h2><p>应用于例如查看哪些商品没有人购买。包括全外连接、左外连接和右外连接。<br>全外连接：<code>full [outer] join...on</code><br>左外连接：<code>left [outer] join...on</code><br>右外连接：<code>right [outer] join...on</code><br>改变表在语句中的位置，左外连接和右外连接的查询结果可以一样。<br><code>select * from A1 right join A2 on A1.no = A2.no  </code><br><code>select * from A2 left join A1 on A1.no = A2.no  </code><br><br>  </p>
-<h1 id="三、子查询"><a href="#三、子查询" class="headerlink" title="三、子查询"></a>三、子查询</h1><h2 id="1、不相关子查询"><a href="#1、不相关子查询" class="headerlink" title="1、不相关子查询"></a>1、不相关子查询</h2><p>即内层查询条件不依赖于外层查询<br>eg.查询购买了”某某食品贸易部”经销的商品的学生和姓名<br><img src="/../../img/不相关子查询.png" width="400" height="200">  </p>
-<h2 id="2、相关子查询"><a href="#2、相关子查询" class="headerlink" title="2、相关子查询"></a>2、相关子查询</h2><p>即内层查询条件依赖于外层查询  </p>
-<h3 id="1-不带exists谓词的子查询"><a href="#1-不带exists谓词的子查询" class="headerlink" title="1)不带exists谓词的子查询"></a>1)不带exists谓词的子查询</h3><h3 id="2-带exists谓词的子查询"><a href="#2-带exists谓词的子查询" class="headerlink" title="2)带exists谓词的子查询"></a>2)带exists谓词的子查询</h3><p>eg.查询购买了商品的学生信息</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from student where exists  </span><br><span class="line">    (select * from SaleBill where sno &#x3D; Student.no)</span><br></pre></td></tr></table></figure>
-
-<br>  
-
-<h2 id="3、集合查询"><a href="#3、集合查询" class="headerlink" title="3、集合查询"></a>3、集合查询</h2><p>union、交操作intersect、差操作except<br>eg.查询MIS专业或/(并且)出生晚于1999年学生的信息  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from student where major &#x3D; &#39;MIS&#39;  </span><br><span class="line">union&#x2F;(intersect)  </span><br><span class="line">selcet from student where birthyear &gt; 1999</span><br></pre></td></tr></table></figure>
-
-<br>  
-
-
-<h2 id="4、基于派生表查询"><a href="#4、基于派生表查询" class="headerlink" title="4、基于派生表查询"></a>4、基于派生表查询</h2><p>及某张表是由select语句构成的<br>eg.查询购买了GN0002的商品的学生信息  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from student S join  </span><br><span class="line"> (select sno,goodno from Salebill where  goodsno &#x3D; &#39;GN0002&#39;) AS SA_sno on S.sno &#x3D; SA_sno</span><br></pre></td></tr></table></figure>
-
-<br>  
-
-
-<h2 id="5、使用top选择结果集元组"><a href="#5、使用top选择结果集元组" class="headerlink" title="5、使用top选择结果集元组"></a>5、使用top选择结果集元组</h2><p>一般格式：<code>top n [percent] [with ties]</code><br>eg.查询年龄最大的三位学生的信息  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select top 3 with ties * from student  </span><br><span class="line">order by birthyear</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>数据库</tag>
       </tags>
@@ -298,8 +298,25 @@
   </entry>
   <entry>
     <title>第三章-SQL语句(数据更改)</title>
-    <url>/2021/05/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5-%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%94%B9/</url>
-    <content><![CDATA[]]></content>
+    <url>/2021/05/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%94%B9)/</url>
+    <content><![CDATA[<h1 id="一、插入数据"><a href="#一、插入数据" class="headerlink" title="一、插入数据"></a>一、插入数据</h1><h2 id="1-插入元组"><a href="#1-插入元组" class="headerlink" title="(1)插入元组"></a>(1)插入元组</h2><blockquote>
+<p>insert into table_name<br>[column_name…]<br>values<br>[value…]  </p>
+</blockquote>
+<h2 id="2-插入子查询结果"><a href="#2-插入子查询结果" class="headerlink" title="(2)插入子查询结果"></a>(2)插入子查询结果</h2><h3 id="1、先建立表"><a href="#1、先建立表" class="headerlink" title="1、先建立表"></a>1、先建立表</h3><blockquote>
+<p>insert into table_name<br>[column…]<br>select …</p>
+</blockquote>
+<h3 id="2、无需先建立表"><a href="#2、无需先建立表" class="headerlink" title="2、无需先建立表"></a>2、无需先建立表</h3><blockquote>
+<p>select [column…]<br>into table_name<br>from …</p>
+</blockquote>
+<br>
+
+<h1 id="二、修改数据"><a href="#二、修改数据" class="headerlink" title="二、修改数据"></a>二、修改数据</h1><blockquote>
+<p>update table_name<br>set column_name = expression<br>[where ….]  </p>
+</blockquote>
+<br>
+
+<h1 id="三、删除数据"><a href="#三、删除数据" class="headerlink" title="三、删除数据"></a>三、删除数据</h1><p>delete [from] table_name<br>[where …]</p>
+]]></content>
       <tags>
         <tag>数据库</tag>
       </tags>
