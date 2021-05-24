@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据库," />
 
 
 
@@ -79,14 +79,17 @@
 
 
 
-<meta name="description" content="hello world">
-<meta property="og:type" content="website">
-<meta property="og:title" content="chikaze&#39;blog">
-<meta property="og:url" content="http://example.com/categories/extra/index.html">
+<meta name="description" content="一、插入数据(1)插入元组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第三章-SQL语句(数据更改、视图)">
+<meta property="og:url" content="http://example.com/2021/05/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%94%B9%E3%80%81%E8%A7%86%E5%9B%BE)/index.html">
 <meta property="og:site_name" content="chikaze&#39;blog">
-<meta property="og:description" content="hello world">
+<meta property="og:description" content="一、插入数据(1)插入元组">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-05-23T13:05:05.000Z">
+<meta property="article:modified_time" content="2021-05-24T06:41:21.435Z">
 <meta property="article:author" content="chikaze">
+<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
 
 
@@ -117,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/categories/extra/"/>
+  <link rel="canonical" href="http://example.com/2021/05/23/数据库原理及应用/第三章-SQL语句(数据更改、视图)/"/>
 
 
 
 
 
-  <title>分类: extra | chikaze'blog</title>
+  <title>第三章-SQL语句(数据更改、视图) | chikaze'blog</title>
   
 
 
@@ -142,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -270,55 +273,185 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>extra<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%94%B9%E3%80%81%E8%A7%86%E5%9B%BE)/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="chikaze'blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2021/04/22/extra/markdown%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" itemprop="url">
-              
-                <span itemprop="name">markdown使用文档</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">第三章-SQL语句(数据更改、视图)</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2021-04-22T10:28:58+08:00"
-              content="2021-04-22" >
-          04-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-23T21:05:05+08:00">
+                2021-05-23
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、插入数据"><a href="#一、插入数据" class="headerlink" title="一、插入数据"></a>一、插入数据</h2><h3 id="1-插入元组"><a href="#1-插入元组" class="headerlink" title="(1)插入元组"></a>(1)插入元组</h3><span id="more"></span>
+<blockquote>
+<p>insert into table_name<br>[column_name…]<br>values<br>[value…]  </p>
+</blockquote>
+<h3 id="2-插入子查询结果"><a href="#2-插入子查询结果" class="headerlink" title="(2)插入子查询结果"></a>(2)插入子查询结果</h3><h4 id="1、先建立表"><a href="#1、先建立表" class="headerlink" title="1、先建立表"></a>1、先建立表</h4><blockquote>
+<p>insert into table_name<br>[column…]<br>select …</p>
+</blockquote>
+<h4 id="2、无需先建立表"><a href="#2、无需先建立表" class="headerlink" title="2、无需先建立表"></a>2、无需先建立表</h4><blockquote>
+<p>select [column…]<br>into table_name<br>from …</p>
+</blockquote>
+<br>
+
+<h2 id="二、修改数据"><a href="#二、修改数据" class="headerlink" title="二、修改数据"></a>二、修改数据</h2><blockquote>
+<p>update table_name<br>set column_name = expression<br>[where ….]  </p>
+</blockquote>
+<br>
+
+<h2 id="三、删除数据"><a href="#三、删除数据" class="headerlink" title="三、删除数据"></a>三、删除数据</h2><p>delete [from] table_name<br>[where …]</p>
+<br>
+
+<hr>
+<h2 id="一、定义视图"><a href="#一、定义视图" class="headerlink" title="一、定义视图"></a>一、定义视图</h2><blockquote>
+<p>create view view_name<br>[column_name…]<br>AS &lt;select…&gt;<br>[with check option]</p>
+</blockquote>
+<p>(1)with check option 表示通过视图进行更新操作时要保证更新数据满足子查询的条件表达式。<br>(2)以下情况必须指明视图列名  </p>
+<ol>
+<li>子查询的某个目标列是聚合函数或列表达式  </li>
+<li>多表连接时出现同名列作为视图的列  </li>
+<li>需在视图中指定新列名代替子查询列名  </li>
+</ol>
+<br>
+
+<h2 id="二、删除视图"><a href="#二、删除视图" class="headerlink" title="二、删除视图"></a>二、删除视图</h2><p><code>drop view view_name</code><br>*注意删除的次序，先删除建立在其他表上的表，再删除”原始表”。  </p>
+<h2 id="三、查询视图"><a href="#三、查询视图" class="headerlink" title="三、查询视图"></a>三、查询视图</h2><p>与查基本表一致  </p>
+<h2 id="四、更新视图"><a href="#四、更新视图" class="headerlink" title="四、更新视图"></a>四、更新视图</h2><p>视图不存储数据，对其更新最终转换为对基本表的更新。<br>格式与更新基本表一致。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/05/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2)/" rel="next" title="第三章-SLQ语句(数据查询)">
+                <i class="fa fa-chevron-left"></i> 第三章-SLQ语句(数据查询)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/05/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E5%9B%9B%E7%AB%A0-Transact-SQL%E7%BC%96%E7%A8%8B%EF%BC%88%E6%B8%B8%E6%A0%87%EF%BC%89/" rel="prev" title="第四章-Transact-SQL编程(游标)">
+                第四章-Transact-SQL编程(游标) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -326,6 +459,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -346,8 +483,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -411,6 +557,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">1.</span> <span class="nav-text">一、插入数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%8F%92%E5%85%A5%E5%85%83%E7%BB%84"><span class="nav-number">1.1.</span> <span class="nav-text">(1)插入元组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%8F%92%E5%85%A5%E5%AD%90%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C"><span class="nav-number">1.2.</span> <span class="nav-text">(2)插入子查询结果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E5%85%88%E5%BB%BA%E7%AB%8B%E8%A1%A8"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、先建立表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E6%97%A0%E9%9C%80%E5%85%88%E5%BB%BA%E7%AB%8B%E8%A1%A8"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、无需先建立表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="nav-number">2.</span> <span class="nav-text">二、修改数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="nav-number">3.</span> <span class="nav-text">三、删除数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%AE%9A%E4%B9%89%E8%A7%86%E5%9B%BE"><span class="nav-number">4.</span> <span class="nav-text">一、定义视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%88%A0%E9%99%A4%E8%A7%86%E5%9B%BE"><span class="nav-number">5.</span> <span class="nav-text">二、删除视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%9F%A5%E8%AF%A2%E8%A7%86%E5%9B%BE"><span class="nav-number">6.</span> <span class="nav-text">三、查询视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%9B%B4%E6%96%B0%E8%A7%86%E5%9B%BE"><span class="nav-number">7.</span> <span class="nav-text">四、更新视图</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -551,6 +713,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
