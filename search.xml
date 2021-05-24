@@ -313,7 +313,7 @@ eg.查询商品的名称和售价</li>
       </tags>
   </entry>
   <entry>
-    <title>第三章-SLQ语句(数据查询)</title>
+    <title>第三章-SQL语句(数据查询)</title>
     <url>/2021/05/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2)/</url>
     <content><![CDATA[<p>基本格式：<br><code>select...from...where...group by...having...order by... </code> </p>
 <span id="more"></span>
@@ -378,7 +378,7 @@ eg.查询商品的名称和售价</li>
 <h2 id="一、定义视图"><a href="#一、定义视图" class="headerlink" title="一、定义视图"></a>一、定义视图</h2><blockquote>
 <p>create view view_name<br>[column_name…]<br>AS &lt;select…&gt;<br>[with check option]</p>
 </blockquote>
-<p>(1)with check option 表示通过视图进行更新操作时要保证更新数据满足子查询的条件表达式。<br>(2)以下情况必须指明视图列名  </p>
+<p>(1)with check option 表示通过视图进行更新操作时要保证更新数据满足子查询的条件表达式。<br>(2)以下情况必须指明视图列名</p>
 <ol>
 <li>子查询的某个目标列是聚合函数或列表达式  </li>
 <li>多表连接时出现同名列作为视图的列  </li>
