@@ -304,7 +304,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/05/26/%E5%AF%B9%E4%BA%8E-PreparedStatement-%E6%88%96-CallableStatement%EF%BC%8C%E6%96%B9%E6%B3%95-executeQuery-%E4%B8%8D%E8%83%BD%E5%B8%A6%E6%9C%89%E5%8F%82%E6%95%B0/" itemprop="url">对于 PreparedStatement 或 CallableStatement，方法 executeQuery() 不能带有参数</a></h1>
+                <a class="post-title-link" href="/2021/05/26/%E5%AF%B9%E4%BA%8E-PreparedStatement-%E6%88%96-CallableStatement%EF%BC%8C%E6%96%B9%E6%B3%95-executeQuery-%E4%B8%8D%E8%83%BD%E5%B8%A6%E6%9C%89%E5%8F%82%E6%95%B0/" itemprop="url">对于PreparedStatement或CallableStatement，方法 executeQuery()不能带有参数</a></h1>
         
 
         <div class="post-meta">
@@ -355,17 +355,14 @@
 
       
         
-          
-            <p>Q：提示：对于 PreparedStatement 或 CallableStatement，方法 executeQuery() 不能带有参数  </p>
-<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><pre><code class="java">String sql=&quot;select*from[demo]whereusername=?andpassword=?&quot;;
-PreparedStatement pstmt=conn.prepareStatement(sql);
-pstmt.setString(1,username);
-pstmt.setString(2,password);
-ResultSetrs=pstmt.executeQuery();
-</code></pre>
-<h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><p>继承了Statement接口中所有方法的PreparedStatement接口都有自己的executeQuery，executeUpdate和execute方法。Statement对象本身不包含SQL语句，因而必须给Statement.execute方法提供SQL语句作为参数。PreparedStatement对象并不将SQL语句作为参数提供给这些方法，因为它们已经包含预编译SQL语句。CallableStatement对象继承这些方法的PreparedStatement形式。对于这些方法的PreparedStatement或CallableStatement版本，使用查询参数将抛出SQLException。</p>
-
-          
+          <p>Q：提示 对于 PreparedStatement 或 CallableStatement，方法 executeQuery() 不能带有参数  </p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/05/26/%E5%AF%B9%E4%BA%8E-PreparedStatement-%E6%88%96-CallableStatement%EF%BC%8C%E6%96%B9%E6%B3%95-executeQuery-%E4%B8%8D%E8%83%BD%E5%B8%A6%E6%9C%89%E5%8F%82%E6%95%B0/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
