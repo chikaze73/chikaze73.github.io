@@ -81,13 +81,13 @@
 
 <meta name="description" content="Q：提示 对于 PreparedStatement 或 CallableStatement，方法 executeQuery() 不能带有参数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对于PreparedStatement或CallableStatement，方法 executeQuery()不能带有参数">
+<meta property="og:title" content="对于PreparedStatement或CallableStatement，方法executeQuery()不能带有参数">
 <meta property="og:url" content="http://example.com/2021/05/26/%E5%AF%B9%E4%BA%8E-PreparedStatement-%E6%88%96-CallableStatement%EF%BC%8C%E6%96%B9%E6%B3%95-executeQuery-%E4%B8%8D%E8%83%BD%E5%B8%A6%E6%9C%89%E5%8F%82%E6%95%B0/index.html">
 <meta property="og:site_name" content="chikaze&#39;blog">
 <meta property="og:description" content="Q：提示 对于 PreparedStatement 或 CallableStatement，方法 executeQuery() 不能带有参数">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-05-26T13:38:22.000Z">
-<meta property="article:modified_time" content="2021-05-26T13:51:38.621Z">
+<meta property="article:modified_time" content="2021-05-26T14:06:27.930Z">
 <meta property="article:author" content="chikaze">
 <meta property="article:tag" content="JavaWeb-Q">
 <meta name="twitter:card" content="summary">
@@ -126,7 +126,7 @@
 
 
 
-  <title>对于PreparedStatement或CallableStatement，方法 executeQuery()不能带有参数 | chikaze'blog</title>
+  <title>对于PreparedStatement或CallableStatement，方法executeQuery()不能带有参数 | chikaze'blog</title>
   
 
 
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">对于PreparedStatement或CallableStatement，方法 executeQuery()不能带有参数</h1>
+          <h1 class="post-title" itemprop="name headline">对于PreparedStatement或CallableStatement，方法executeQuery()不能带有参数</h1>
         
 
         <div class="post-meta">
@@ -357,12 +357,9 @@
         <p>Q：提示 对于 PreparedStatement 或 CallableStatement，方法 executeQuery() 不能带有参数  </p>
 <span id="more"></span>
 
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法:"></a>解决方法:</h3><pre><code class="java">String sql=&quot;select*from[demo]whereusername=?andpassword=?&quot;;
-PreparedStatement pstmt=conn.prepareStatement(sql);
-pstmt.setString(1,username);
-pstmt.setString(2,password);
-ResultSetrs=pstmt.executeQuery();
-</code></pre>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法:"></a>解决方法:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String sql=<span class="string">&quot;select*from[demo]whereusername=?andpassword=?&quot;</span>;</span><br><span class="line">PreparedStatement pstmt=conn.prepareStatement(sql);</span><br><span class="line">pstmt.setString(<span class="number">1</span>,username);</span><br><span class="line">pstmt.setString(<span class="number">2</span>,password);</span><br><span class="line">ResultSetrs=pstmt.executeQuery();</span><br></pre></td></tr></table></figure>
+
+
 <h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><p>继承了Statement接口中所有方法的PreparedStatement接口都有自己的executeQuery，executeUpdate和execute方法。Statement对象本身不包含SQL语句，因而必须给Statement.execute方法提供SQL语句作为参数。PreparedStatement对象并不将SQL语句作为参数提供给这些方法，因为它们已经包含预编译SQL语句。CallableStatement对象继承这些方法的PreparedStatement形式。对于这些方法的PreparedStatement或CallableStatement版本，使用查询参数将抛出SQLException。</p>
 
       
@@ -403,6 +400,10 @@ ResultSetrs=pstmt.executeQuery();
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/05/26/Servlet%E7%BC%96%E7%A0%81%E6%B2%A1%E9%97%AE%E9%A2%98%EF%BC%8C%E4%BD%86Network%E4%B8%8Bservlet%E4%B8%AD%E7%9A%84preview%E6%97%A0%E6%98%BE%E7%A4%BA/" rel="prev" title="Servlet编码没问题，但Network下servlet中的preview无显示">
+                Servlet编码没问题，但Network下servlet中的preview无显示 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -483,7 +484,7 @@ ResultSetrs=pstmt.executeQuery();
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
