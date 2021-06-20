@@ -1,16 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Servlet编码没问题，但Network下servlet中的preview无显示</title>
-    <url>/2021/05/26/JavaWeb/Servlet%E7%BC%96%E7%A0%81%E6%B2%A1%E9%97%AE%E9%A2%98%EF%BC%8C%E4%BD%86Network%E4%B8%8Bservlet%E4%B8%AD%E7%9A%84preview%E6%97%A0%E6%98%BE%E7%A4%BA/</url>
-    <content><![CDATA[<h2 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h2><span id="more"></span>
-<h3 id="1-f12-找到设置"><a href="#1-f12-找到设置" class="headerlink" title="1.f12 找到设置"></a>1.f12 找到设置</h3><p><img src="/.../.../../../../../img/JavaWeb-Q.png" alt="p1" title="p1">  </p>
-<h3 id="2-底部找到restore点击更新"><a href="#2-底部找到restore点击更新" class="headerlink" title="2.底部找到restore点击更新"></a>2.底部找到restore点击更新</h3><p><img src="/.../.../../../../../img/JavaWeb-Q2.png" alt="p2" title="p2">  </p>
-<h3 id="3-可以查看到了"><a href="#3-可以查看到了" class="headerlink" title="3.可以查看到了"></a>3.可以查看到了</h3><p><img src="/.../.../../../../../img/JavaWeb-Q3.png" alt="p3" title="p3">  </p>
-<h2 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h2><p>可能误点击到了filter</p>
+    <title>idea快捷键</title>
+    <url>/2021/06/20/extra/idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<h1 id="一、Ctrl-快捷键"><a href="#一、Ctrl-快捷键" class="headerlink" title="一、Ctrl 快捷键"></a>一、Ctrl 快捷键</h1><span id="more"></span>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ctrl + F</td>
+<td>在当前文件进行文本查找</td>
+</tr>
+<tr>
+<td>Ctrl + R</td>
+<td>在当前文件进行文本替换</td>
+</tr>
+<tr>
+<td>Ctrl + Z</td>
+<td>撤销</td>
+</tr>
+<tr>
+<td>Ctrl + Y</td>
+<td>删除光标所在行 或 删除选中的行</td>
+</tr>
+<tr>
+<td>Ctrl + X</td>
+<td>剪切光标所在行 或 剪切选择内容</td>
+</tr>
+<tr>
+<td>Ctrl + D</td>
+<td>复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面</td>
+</tr>
+<tr>
+<td>Ctrl + W</td>
+<td>递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围</td>
+</tr>
+<tr>
+<td>Ctrl + H</td>
+<td>显示当前类的层次结构</td>
+</tr>
+<tr>
+<td>Ctrl + O</td>
+<td>选择可重写的方法</td>
+</tr>
+<tr>
+<td>Ctrl + I</td>
+<td>选择可继承的方法</td>
+</tr>
+<tr>
+<td>Ctrl + Space</td>
+<td>基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 Ctrl + 逗号</td>
+</tr>
+<tr>
+<td>Ctrl + 左方向键</td>
+<td>光标跳转到当前单词 / 中文句的左侧开头位置</td>
+</tr>
+<tr>
+<td>Ctrl + 右方向键</td>
+<td>光标跳转到当前单词 / 中文句的右侧开头位置</td>
+</tr>
+<tr>
+<td>Ctrl + Delete</td>
+<td>删除光标后面的单词或是中文句</td>
+</tr>
+<tr>
+<td>Ctrl + BackSpace</td>
+<td>删除光标前面的单词或是中文句</td>
+</tr>
+</tbody></table>
+<h1 id="二、Alt-快捷键"><a href="#二、Alt-快捷键" class="headerlink" title="二、Alt 快捷键"></a>二、Alt 快捷键</h1><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Alt + Enter</td>
+<td>IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同</td>
+</tr>
+<tr>
+<td>Alt + Insert</td>
+<td>代码自动生成，如生成对象的 set / get 方法，构造函数，toString() 等</td>
+</tr>
+</tbody></table>
 ]]></content>
+      <categories>
+        <category>extra</category>
+      </categories>
       <tags>
-        <tag>JavaWeb-Q</tag>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows快捷键</title>
+    <url>/2021/06/20/extra/Windows%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<h1 id="Windows快捷键"><a href="#Windows快捷键" class="headerlink" title="Windows快捷键"></a>Windows快捷键</h1><p><kbd>Ctrl</kbd>+<kbd>C</kbd> ：复制<br><kbd>Ctrl</kbd>+<kbd>V</kbd> ：粘贴<br><kbd>Ctrl</kbd>+<kbd>X</kbd> ：剪切  </p>
+<span id="more"></span>
+<p><kbd>Ctrl</kbd>+<kbd>Z</kbd> ：撤销<br><kbd>Ctrl</kbd>+<kbd>F</kbd> ：寻找<br><kbd>Ctrl</kbd>+<kbd>Home</kbd> ：当前窗口或文档的最上端<br><kbd>Ctrl</kbd>+<kbd>End</kbd> ：当前窗口或文档的最下端<br><kbd>Ctrl</kbd>+<kbd>←</kbd> ：实现两个窗口对比<br><kbd>Ctrl</kbd>+<kbd>↓</kbd> ：缩小窗口/向下还原窗口<br><kbd>Ctrl</kbd>+<kbd>A</kbd> ：全选<br><kbd>Ctrl</kbd>+<kbd>S</kbd> ：保存  </p>
+<p><kbd>Alt</kbd>+<kbd>F4</kbd> ：关闭窗口（下班快乐键）<br><kbd>Alt</kbd>+<kbd>Tab</kbd> ：快速切换多窗口  </p>
+<p><kbd>Win</kbd>+<kbd>N</kbd> ：调用便签<br><kbd>Win</kbd>+<kbd>D</kbd> ：显示桌面<br><kbd>Win</kbd>+<kbd>R</kbd> ：调用运行窗口<br><kbd>Win</kbd>+<kbd>M</kbd> ：最小化所有窗口<br><kbd>Win</kbd>+<kbd>Tab</kbd> ：显示打开的所有窗口<br><kbd>Win</kbd>+<kbd>L</kbd> ：锁定电脑<br><kbd>Win</kbd>+<kbd>U</kbd> ：打开系统设置<br><kbd>Win</kbd>+<kbd>E</kbd> ：打开文件管理器/我的电脑<br><kbd>Win</kbd>+<kbd>T</kbd> ：任务栏上固定的应用之间相互切换<br><kbd>Win</kbd>+<kbd>1/2/…N</kbd> ：任务栏上固定的应用之间相互切换<br><kbd>Win</kbd>+<kbd>N</kbd> ：调用便签</p>
+]]></content>
+      <categories>
+        <category>extra</category>
+      </categories>
+      <tags>
+        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -164,6 +263,19 @@
       </tags>
   </entry>
   <entry>
+    <title>Servlet编码没问题，但Network下servlet中的preview无显示</title>
+    <url>/2021/05/26/JavaWeb/Servlet%E7%BC%96%E7%A0%81%E6%B2%A1%E9%97%AE%E9%A2%98%EF%BC%8C%E4%BD%86Network%E4%B8%8Bservlet%E4%B8%AD%E7%9A%84preview%E6%97%A0%E6%98%BE%E7%A4%BA/</url>
+    <content><![CDATA[<h2 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h2><span id="more"></span>
+<h3 id="1-f12-找到设置"><a href="#1-f12-找到设置" class="headerlink" title="1.f12 找到设置"></a>1.f12 找到设置</h3><p><img src="/.../.../../../../../img/JavaWeb-Q.png" alt="p1" title="p1">  </p>
+<h3 id="2-底部找到restore点击更新"><a href="#2-底部找到restore点击更新" class="headerlink" title="2.底部找到restore点击更新"></a>2.底部找到restore点击更新</h3><p><img src="/.../.../../../../../img/JavaWeb-Q2.png" alt="p2" title="p2">  </p>
+<h3 id="3-可以查看到了"><a href="#3-可以查看到了" class="headerlink" title="3.可以查看到了"></a>3.可以查看到了</h3><p><img src="/.../.../../../../../img/JavaWeb-Q3.png" alt="p3" title="p3">  </p>
+<h2 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h2><p>可能误点击到了filter</p>
+]]></content>
+      <tags>
+        <tag>JavaWeb-Q</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>idea连接sqlserver数据库</title>
     <url>/2021/05/31/JavaWeb/idea%E8%BF%9E%E6%8E%A5sqlserver%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
     <content><![CDATA[<p>确定数据库的类型 SQL serve<br>数据库连接 驱动类型、数据库地址、数据库的用户和密码  </p>
@@ -189,22 +301,6 @@
 ]]></content>
       <tags>
         <tag>JavaWeb-Q</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows快捷键</title>
-    <url>/2021/06/20/extra/Windows%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
-    <content><![CDATA[<h1 id="Windows快捷键"><a href="#Windows快捷键" class="headerlink" title="Windows快捷键"></a>Windows快捷键</h1><p><kbd>Ctrl</kbd>+<kbd>C</kbd> ：复制<br><kbd>Ctrl</kbd>+<kbd>V</kbd> ：粘贴<br><kbd>Ctrl</kbd>+<kbd>X</kbd> ：剪切  </p>
-<span id="more"></span>
-<p><kbd>Ctrl</kbd>+<kbd>Z</kbd> ：撤销<br><kbd>Ctrl</kbd>+<kbd>F</kbd> ：寻找<br><kbd>Ctrl</kbd>+<kbd>Home</kbd> ：当前窗口或文档的最上端<br><kbd>Ctrl</kbd>+<kbd>End</kbd> ：当前窗口或文档的最下端<br><kbd>Ctrl</kbd>+<kbd>←</kbd> ：实现两个窗口对比<br><kbd>Ctrl</kbd>+<kbd>↓</kbd> ：缩小窗口/向下还原窗口<br><kbd>Ctrl</kbd>+<kbd>A</kbd> ：全选<br><kbd>Ctrl</kbd>+<kbd>S</kbd> ：保存  </p>
-<p><kbd>Alt</kbd>+<kbd>F4</kbd> ：关闭窗口（下班快乐键）<br><kbd>Alt</kbd>+<kbd>Tab</kbd> ：快速切换多窗口  </p>
-<p><kbd>Win</kbd>+<kbd>N</kbd> ：调用便签<br><kbd>Win</kbd>+<kbd>D</kbd> ：显示桌面<br><kbd>Win</kbd>+<kbd>R</kbd> ：调用运行窗口<br><kbd>Win</kbd>+<kbd>M</kbd> ：最小化所有窗口<br><kbd>Win</kbd>+<kbd>Tab</kbd> ：显示打开的所有窗口<br><kbd>Win</kbd>+<kbd>L</kbd> ：锁定电脑<br><kbd>Win</kbd>+<kbd>U</kbd> ：打开系统设置<br><kbd>Win</kbd>+<kbd>E</kbd> ：打开文件管理器/我的电脑<br><kbd>Win</kbd>+<kbd>T</kbd> ：任务栏上固定的应用之间相互切换<br><kbd>Win</kbd>+<kbd>1/2/…N</kbd> ：任务栏上固定的应用之间相互切换<br><kbd>Win</kbd>+<kbd>N</kbd> ：调用便签</p>
-]]></content>
-      <categories>
-        <category>extra</category>
-      </categories>
-      <tags>
-        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -315,6 +411,88 @@
       </tags>
   </entry>
   <entry>
+    <title>第三章-SQL语句(数据更改、视图)</title>
+    <url>/2021/05/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%94%B9%E3%80%81%E8%A7%86%E5%9B%BE)/</url>
+    <content><![CDATA[<h2 id="一、插入数据"><a href="#一、插入数据" class="headerlink" title="一、插入数据"></a>一、插入数据</h2><h3 id="1-插入元组"><a href="#1-插入元组" class="headerlink" title="(1)插入元组"></a>(1)插入元组</h3><span id="more"></span>
+<blockquote>
+<p>insert into table_name<br>[column_name…]<br>values<br>[value…]  </p>
+</blockquote>
+<h3 id="2-插入子查询结果"><a href="#2-插入子查询结果" class="headerlink" title="(2)插入子查询结果"></a>(2)插入子查询结果</h3><h4 id="1、先建立表"><a href="#1、先建立表" class="headerlink" title="1、先建立表"></a>1、先建立表</h4><blockquote>
+<p>insert into table_name<br>[column…]<br>select …</p>
+</blockquote>
+<h4 id="2、无需先建立表"><a href="#2、无需先建立表" class="headerlink" title="2、无需先建立表"></a>2、无需先建立表</h4><blockquote>
+<p>select [column…]<br>into table_name<br>from …</p>
+</blockquote>
+<br>
+
+<h2 id="二、修改数据"><a href="#二、修改数据" class="headerlink" title="二、修改数据"></a>二、修改数据</h2><blockquote>
+<p>update table_name<br>set column_name = expression<br>[where ….]  </p>
+</blockquote>
+<br>
+
+<h2 id="三、删除数据"><a href="#三、删除数据" class="headerlink" title="三、删除数据"></a>三、删除数据</h2><p>delete [from] table_name<br>[where …]</p>
+<br>
+
+<hr>
+<h2 id="一、定义视图"><a href="#一、定义视图" class="headerlink" title="一、定义视图"></a>一、定义视图</h2><blockquote>
+<p>create view view_name<br>[column_name…]<br>AS &lt;select…&gt;<br>[with check option]</p>
+</blockquote>
+<p>(1)<code>with check option</code> 表示通过视图进行更新操作时要保证更新数据满足子查询的条件表达式。<br>(2)以下情况必须指明视图列名</p>
+<ol>
+<li>子查询的某个目标列是聚合函数或列表达式  </li>
+<li>多表连接时出现同名列作为视图的列  </li>
+<li>需在视图中指定新列名代替子查询列名  </li>
+</ol>
+<br>
+
+<h2 id="二、删除视图"><a href="#二、删除视图" class="headerlink" title="二、删除视图"></a>二、删除视图</h2><p><code>drop view view_name</code><br>*注意删除的次序，先删除建立在其他表上的表，再删除”原始表”。  </p>
+<h2 id="三、查询视图"><a href="#三、查询视图" class="headerlink" title="三、查询视图"></a>三、查询视图</h2><p>与查基本表一致  </p>
+<h2 id="四、更新视图"><a href="#四、更新视图" class="headerlink" title="四、更新视图"></a>四、更新视图</h2><p>视图不存储数据，对其更新最终转换为对基本表的更新。<br>格式与更新基本表一致。</p>
+]]></content>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第三章-SQL语句(数据查询)</title>
+    <url>/2021/05/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2)/</url>
+    <content><![CDATA[<p>基本格式：<br><code>select...from...where...group by...having...order by... </code> </p>
+<span id="more"></span>
+<br>  
+
+<h1 id="一、单表查询"><a href="#一、单表查询" class="headerlink" title="一、单表查询"></a>一、单表查询</h1><p><code>select...from...</code><br>选择表中元组：where<br>确定范围：between and<br>确定集合：in<br>字符串通配：like<br>基本格式  <code>[not] like &#39;&lt;匹配串&gt;&#39; [escape &#39;&lt;转义字符&gt;&#39;]</code>  </p>
+<blockquote>
+<p>(1)_:匹配任一字符<br>(2)%:匹配任意长度字符<br>(3)[ ]:数据列表匹配任一字符成功，该like结果为true。如果字符是连续的，可以使用“-”代表中间部分。eg. a,b,c,d[a-d]<br>(4)[^]:表示不匹配任何[ ]中的字符。  </p>
+</blockquote>
+<p>空值查询：null<br>多重条件查询：and、or  其中and的运算级别高于or<br>对查询结果排序：order by [asc] [desc]<br>聚合函数：常用count(*)、sum()、avg()、max()、min()<br>对组进行选择：having  其后可跟列名、聚合函数作为条件表达式。<br><br>  </p>
+<h1 id="二、多表连接查询"><a href="#二、多表连接查询" class="headerlink" title="二、多表连接查询"></a>二、多表连接查询</h1><h2 id="1、内连接"><a href="#1、内连接" class="headerlink" title="1、内连接"></a>1、内连接</h2><p>join on<br>包括等值连接、非等值连接。其中等值连接去掉重复的列则为自然连接，如果连接的是两个相同的表则为自连接。  </p>
+<h2 id="2、外连接"><a href="#2、外连接" class="headerlink" title="2、外连接"></a>2、外连接</h2><p>应用于例如查看哪些商品没有人购买。包括全外连接、左外连接和右外连接。<br>全外连接：<code>full [outer] join...on</code><br>左外连接：<code>left [outer] join...on</code><br>右外连接：<code>right [outer] join...on</code><br>改变表在语句中的位置，左外连接和右外连接的查询结果可以一样。<br><code>select * from A1 right join A2 on A1.no = A2.no  </code><br><code>select * from A2 left join A1 on A1.no = A2.no  </code><br><br>  </p>
+<h1 id="三、子查询"><a href="#三、子查询" class="headerlink" title="三、子查询"></a>三、子查询</h1><h2 id="1、不相关子查询"><a href="#1、不相关子查询" class="headerlink" title="1、不相关子查询"></a>1、不相关子查询</h2><p>即内层查询条件不依赖于外层查询<br>eg.查询购买了”某某食品贸易部”经销的商品的学生和姓名<br><img src="/../../img/不相关子查询.png" width="400" height="200">  </p>
+<h2 id="2、相关子查询"><a href="#2、相关子查询" class="headerlink" title="2、相关子查询"></a>2、相关子查询</h2><p>即内层查询条件依赖于外层查询  </p>
+<h3 id="1-不带exists谓词的子查询"><a href="#1-不带exists谓词的子查询" class="headerlink" title="1)不带exists谓词的子查询"></a>1)不带exists谓词的子查询</h3><h3 id="2-带exists谓词的子查询"><a href="#2-带exists谓词的子查询" class="headerlink" title="2)带exists谓词的子查询"></a>2)带exists谓词的子查询</h3><p>eg.查询购买了商品的学生信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from student where exists  </span><br><span class="line">    (select * from SaleBill where sno &#x3D; Student.no)</span><br></pre></td></tr></table></figure>
+
+<br>  
+
+<h2 id="3、集合查询"><a href="#3、集合查询" class="headerlink" title="3、集合查询"></a>3、集合查询</h2><p>union、交操作intersect、差操作except<br>eg.查询MIS专业或/(并且)出生晚于1999年学生的信息  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from student where major &#x3D; &#39;MIS&#39;  </span><br><span class="line">union&#x2F;(intersect)  </span><br><span class="line">selcet from student where birthyear &gt; 1999</span><br></pre></td></tr></table></figure>
+
+<br>  
+
+
+<h2 id="4、基于派生表查询"><a href="#4、基于派生表查询" class="headerlink" title="4、基于派生表查询"></a>4、基于派生表查询</h2><p>及某张表是由select语句构成的<br>eg.查询购买了GN0002的商品的学生信息  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from student S join  </span><br><span class="line"> (select sno,goodno from Salebill where  goodsno &#x3D; &#39;GN0002&#39;) AS SA_sno on S.sno &#x3D; SA_sno</span><br></pre></td></tr></table></figure>
+
+<br>  
+
+
+<h2 id="5、使用top选择结果集元组"><a href="#5、使用top选择结果集元组" class="headerlink" title="5、使用top选择结果集元组"></a>5、使用top选择结果集元组</h2><p>一般格式：<code>top n [percent] [with ties]</code><br>eg.查询年龄最大的三位学生的信息  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select top 3 with ties * from student  </span><br><span class="line">order by birthyear</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>第二章-关系数据库</title>
     <url>/2021/05/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
     <content><![CDATA[<h1 id="一、关系的完整性"><a href="#一、关系的完整性" class="headerlink" title="一、关系的完整性"></a>一、关系的完整性</h1><ol>
@@ -362,91 +540,9 @@ eg.查询商品的名称和售价</li>
       </tags>
   </entry>
   <entry>
-    <title>第三章-SQL语句(数据更改、视图)</title>
-    <url>/2021/05/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%94%B9%E3%80%81%E8%A7%86%E5%9B%BE)/</url>
-    <content><![CDATA[<h2 id="一、插入数据"><a href="#一、插入数据" class="headerlink" title="一、插入数据"></a>一、插入数据</h2><h3 id="1-插入元组"><a href="#1-插入元组" class="headerlink" title="(1)插入元组"></a>(1)插入元组</h3><span id="more"></span>
-<blockquote>
-<p>insert into table_name<br>[column_name…]<br>values<br>[value…]  </p>
-</blockquote>
-<h3 id="2-插入子查询结果"><a href="#2-插入子查询结果" class="headerlink" title="(2)插入子查询结果"></a>(2)插入子查询结果</h3><h4 id="1、先建立表"><a href="#1、先建立表" class="headerlink" title="1、先建立表"></a>1、先建立表</h4><blockquote>
-<p>insert into table_name<br>[column…]<br>select …</p>
-</blockquote>
-<h4 id="2、无需先建立表"><a href="#2、无需先建立表" class="headerlink" title="2、无需先建立表"></a>2、无需先建立表</h4><blockquote>
-<p>select [column…]<br>into table_name<br>from …</p>
-</blockquote>
-<br>
-
-<h2 id="二、修改数据"><a href="#二、修改数据" class="headerlink" title="二、修改数据"></a>二、修改数据</h2><blockquote>
-<p>update table_name<br>set column_name = expression<br>[where ….]  </p>
-</blockquote>
-<br>
-
-<h2 id="三、删除数据"><a href="#三、删除数据" class="headerlink" title="三、删除数据"></a>三、删除数据</h2><p>delete [from] table_name<br>[where …]</p>
-<br>
-
-<hr>
-<h2 id="一、定义视图"><a href="#一、定义视图" class="headerlink" title="一、定义视图"></a>一、定义视图</h2><blockquote>
-<p>create view view_name<br>[column_name…]<br>AS &lt;select…&gt;<br>[with check option]</p>
-</blockquote>
-<p>(1)<code>with check option</code> 表示通过视图进行更新操作时要保证更新数据满足子查询的条件表达式。<br>(2)以下情况必须指明视图列名</p>
-<ol>
-<li>子查询的某个目标列是聚合函数或列表达式  </li>
-<li>多表连接时出现同名列作为视图的列  </li>
-<li>需在视图中指定新列名代替子查询列名  </li>
-</ol>
-<br>
-
-<h2 id="二、删除视图"><a href="#二、删除视图" class="headerlink" title="二、删除视图"></a>二、删除视图</h2><p><code>drop view view_name</code><br>*注意删除的次序，先删除建立在其他表上的表，再删除”原始表”。  </p>
-<h2 id="三、查询视图"><a href="#三、查询视图" class="headerlink" title="三、查询视图"></a>三、查询视图</h2><p>与查基本表一致  </p>
-<h2 id="四、更新视图"><a href="#四、更新视图" class="headerlink" title="四、更新视图"></a>四、更新视图</h2><p>视图不存储数据，对其更新最终转换为对基本表的更新。<br>格式与更新基本表一致。</p>
-]]></content>
-      <tags>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>第四章-Transact-SQL编程(游标)</title>
     <url>/2021/05/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E5%9B%9B%E7%AB%A0-Transact-SQL%E7%BC%96%E7%A8%8B%EF%BC%88%E6%B8%B8%E6%A0%87%EF%BC%89/</url>
     <content><![CDATA[]]></content>
-      <tags>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第三章-SQL语句(数据查询)</title>
-    <url>/2021/05/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2)/</url>
-    <content><![CDATA[<p>基本格式：<br><code>select...from...where...group by...having...order by... </code> </p>
-<span id="more"></span>
-<br>  
-
-<h1 id="一、单表查询"><a href="#一、单表查询" class="headerlink" title="一、单表查询"></a>一、单表查询</h1><p><code>select...from...</code><br>选择表中元组：where<br>确定范围：between and<br>确定集合：in<br>字符串通配：like<br>基本格式  <code>[not] like &#39;&lt;匹配串&gt;&#39; [escape &#39;&lt;转义字符&gt;&#39;]</code>  </p>
-<blockquote>
-<p>(1)_:匹配任一字符<br>(2)%:匹配任意长度字符<br>(3)[ ]:数据列表匹配任一字符成功，该like结果为true。如果字符是连续的，可以使用“-”代表中间部分。eg. a,b,c,d[a-d]<br>(4)[^]:表示不匹配任何[ ]中的字符。  </p>
-</blockquote>
-<p>空值查询：null<br>多重条件查询：and、or  其中and的运算级别高于or<br>对查询结果排序：order by [asc] [desc]<br>聚合函数：常用count(*)、sum()、avg()、max()、min()<br>对组进行选择：having  其后可跟列名、聚合函数作为条件表达式。<br><br>  </p>
-<h1 id="二、多表连接查询"><a href="#二、多表连接查询" class="headerlink" title="二、多表连接查询"></a>二、多表连接查询</h1><h2 id="1、内连接"><a href="#1、内连接" class="headerlink" title="1、内连接"></a>1、内连接</h2><p>join on<br>包括等值连接、非等值连接。其中等值连接去掉重复的列则为自然连接，如果连接的是两个相同的表则为自连接。  </p>
-<h2 id="2、外连接"><a href="#2、外连接" class="headerlink" title="2、外连接"></a>2、外连接</h2><p>应用于例如查看哪些商品没有人购买。包括全外连接、左外连接和右外连接。<br>全外连接：<code>full [outer] join...on</code><br>左外连接：<code>left [outer] join...on</code><br>右外连接：<code>right [outer] join...on</code><br>改变表在语句中的位置，左外连接和右外连接的查询结果可以一样。<br><code>select * from A1 right join A2 on A1.no = A2.no  </code><br><code>select * from A2 left join A1 on A1.no = A2.no  </code><br><br>  </p>
-<h1 id="三、子查询"><a href="#三、子查询" class="headerlink" title="三、子查询"></a>三、子查询</h1><h2 id="1、不相关子查询"><a href="#1、不相关子查询" class="headerlink" title="1、不相关子查询"></a>1、不相关子查询</h2><p>即内层查询条件不依赖于外层查询<br>eg.查询购买了”某某食品贸易部”经销的商品的学生和姓名<br><img src="/../../img/不相关子查询.png" width="400" height="200">  </p>
-<h2 id="2、相关子查询"><a href="#2、相关子查询" class="headerlink" title="2、相关子查询"></a>2、相关子查询</h2><p>即内层查询条件依赖于外层查询  </p>
-<h3 id="1-不带exists谓词的子查询"><a href="#1-不带exists谓词的子查询" class="headerlink" title="1)不带exists谓词的子查询"></a>1)不带exists谓词的子查询</h3><h3 id="2-带exists谓词的子查询"><a href="#2-带exists谓词的子查询" class="headerlink" title="2)带exists谓词的子查询"></a>2)带exists谓词的子查询</h3><p>eg.查询购买了商品的学生信息</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from student where exists  </span><br><span class="line">    (select * from SaleBill where sno &#x3D; Student.no)</span><br></pre></td></tr></table></figure>
-
-<br>  
-
-<h2 id="3、集合查询"><a href="#3、集合查询" class="headerlink" title="3、集合查询"></a>3、集合查询</h2><p>union、交操作intersect、差操作except<br>eg.查询MIS专业或/(并且)出生晚于1999年学生的信息  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from student where major &#x3D; &#39;MIS&#39;  </span><br><span class="line">union&#x2F;(intersect)  </span><br><span class="line">selcet from student where birthyear &gt; 1999</span><br></pre></td></tr></table></figure>
-
-<br>  
-
-
-<h2 id="4、基于派生表查询"><a href="#4、基于派生表查询" class="headerlink" title="4、基于派生表查询"></a>4、基于派生表查询</h2><p>及某张表是由select语句构成的<br>eg.查询购买了GN0002的商品的学生信息  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select * from student S join  </span><br><span class="line"> (select sno,goodno from Salebill where  goodsno &#x3D; &#39;GN0002&#39;) AS SA_sno on S.sno &#x3D; SA_sno</span><br></pre></td></tr></table></figure>
-
-<br>  
-
-
-<h2 id="5、使用top选择结果集元组"><a href="#5、使用top选择结果集元组" class="headerlink" title="5、使用top选择结果集元组"></a>5、使用top选择结果集元组</h2><p>一般格式：<code>top n [percent] [with ties]</code><br>eg.查询年龄最大的三位学生的信息  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">select top 3 with ties * from student  </span><br><span class="line">order by birthyear</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>数据库</tag>
       </tags>
