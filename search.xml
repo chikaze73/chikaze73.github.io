@@ -194,10 +194,8 @@
   <entry>
     <title>NotePad++右键无提示</title>
     <url>/2021/06/21/extra/NotePad-%E5%8F%B3%E9%94%AE%E6%97%A0%E6%8F%90%E7%A4%BA/</url>
-    <content><![CDATA[<span id="more"></span>
-
-<ol>
-<li>windows + R运行，在运行窗口中输入 regedit，进入注册表编辑器    </li>
+    <content><![CDATA[<ol>
+<li>windows + R运行，在运行窗口中输入 regedit，进入注册表编辑器    <span id="more"></span></li>
 <li>在左边的地址栏中输入\HKEY_CLASSES_ROOT*\shell  </li>
 <li>在shell上右键–新建项，命名为edit with notepad++  </li>
 <li>在新建的项edit with notepad++上右键，然后新建一个项，命名为command，新建了command之后选中command项会发现右边有相应的值，双击默认进行修改  </li>
