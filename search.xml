@@ -98,7 +98,7 @@
 <p><img src="/../../img/notepad++.png" alt="notepad++" title="notepad++">  </p>
 ]]></content>
       <categories>
-        <category>tips</category>
+        <category>extra</category>
       </categories>
       <tags>
         <tag>tips</tag>
@@ -640,6 +640,29 @@ eg.查询商品的名称和售价</li>
       </categories>
       <tags>
         <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用idea生成javadoc文档</title>
+    <url>/2021/06/23/extra/%E4%BD%BF%E7%94%A8idea%E7%94%9F%E6%88%90javadoc%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<ol>
+<li>打开 idea，点击 Tools-&gt; Generate JavaDoc，会打开生成 javadoc 文档的配置页面。</li>
+</ol>
+<p><img src="/../../img/IDEA-javadoc%E9%85%8D%E7%BD%AE.png" alt="配置" title="配置"> </p>
+<ol start="2">
+<li>选择想要生成的javadoc范围</li>
+<li>选择输出路径</li>
+<li>配置<code>-encoding utf-8 -charset utf-8</code>防止中文乱码</li>
+<li>点击OK</li>
+<li>可在对应路径下的index.html中查看</li>
+</ol>
+<p> <img src="/../../img/javadoc-%E7%A4%BA%E4%BE%8B.png" alt="示例" title="示例"> </p>
+]]></content>
+      <categories>
+        <category>extra</category>
+      </categories>
+      <tags>
+        <tag>tips</tag>
       </tags>
   </entry>
 </search>
