@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="SQL的功能主要包括：数据定义，数据查询，数据操作，数据控制">
+<meta name="description" content="一、插入数据(1)插入元组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第三章-SQL语句(定义与维护)">
-<meta property="og:url" content="http://example.com/2021/05/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5(%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%BB%B4%E6%8A%A4)/index.html">
+<meta property="og:title" content="SQL语句(数据更改、视图)">
+<meta property="og:url" content="http://example.com/2021/05/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%94%B9%E3%80%81%E8%A7%86%E5%9B%BE)/index.html">
 <meta property="og:site_name" content="chikaze&#39;blog">
-<meta property="og:description" content="SQL的功能主要包括：数据定义，数据查询，数据操作，数据控制">
+<meta property="og:description" content="一、插入数据(1)插入元组">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-05-18T03:10:57.000Z">
-<meta property="article:modified_time" content="2021-05-19T04:57:47.161Z">
+<meta property="article:published_time" content="2021-05-23T13:05:05.000Z">
+<meta property="article:modified_time" content="2021-07-01T13:42:30.019Z">
 <meta property="article:author" content="chikaze">
 <meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/2021/05/18/数据库原理及应用/第三章-SQL语句(定义与维护)/"/>
+  <link rel="canonical" href="http://example.com/2021/05/23/数据库原理及应用/SQL语句(数据更改、视图)/"/>
 
 
 
 
 
-  <title>第三章-SQL语句(定义与维护) | chikaze'blog</title>
+  <title>SQL语句(数据更改、视图) | chikaze'blog</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5(%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%BB%B4%E6%8A%A4)/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%94%B9%E3%80%81%E8%A7%86%E5%9B%BE)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第三章-SQL语句(定义与维护)</h1>
+          <h1 class="post-title" itemprop="name headline">SQL语句(数据更改、视图)</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-18T11:10:57+08:00">
-                2021-05-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-23T21:05:05+08:00">
+                2021-05-23
               </time>
             
 
@@ -354,64 +354,41 @@
       
 
       
-        <p><strong>SQL的功能主要包括：数据定义，数据查询，数据操作，数据控制</strong>  </p>
-<span id="more"></span>  
-
-<table>
-<thead>
-<tr>
-<th>SQL功能</th>
-<th>对应命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>数据定义</td>
-<td>create、drop、alter</td>
-</tr>
-<tr>
-<td>数据查询</td>
-<td>select</td>
-</tr>
-<tr>
-<td>数据操纵</td>
-<td>insert、update、delete</td>
-</tr>
-<tr>
-<td>数据控制</td>
-<td>grant、revoke、deny</td>
-</tr>
-</tbody></table>
-<br> 
-
-<h1 id="一、数据库定义及维护"><a href="#一、数据库定义及维护" class="headerlink" title="一、数据库定义及维护"></a>一、数据库定义及维护</h1><h2 id="一-数据库定义"><a href="#一-数据库定义" class="headerlink" title="(一)数据库定义"></a>(一)数据库定义</h2><p>   <code>create database database_name</code>  </p>
-<h2 id="二-数据库维护"><a href="#二-数据库维护" class="headerlink" title="(二)数据库维护"></a>(二)数据库维护</h2><p><code>alter database</code>  </p>
-<h1 id="二、表定义及维护"><a href="#二、表定义及维护" class="headerlink" title="二、表定义及维护"></a>二、表定义及维护</h1><h2 id="一-表定义"><a href="#一-表定义" class="headerlink" title="(一)表定义"></a>(一)表定义</h2><p><code>create table table_name</code>  </p>
-<h2 id="二-表维护"><a href="#二-表维护" class="headerlink" title="(二)表维护"></a>(二)表维护</h2><blockquote>
-<p>alter table table_name<br>add<br>drop column<br>alter column<br><br>  </p>
-</blockquote>
-<h1 id="三、完整性定义及维护"><a href="#三、完整性定义及维护" class="headerlink" title="三、完整性定义及维护"></a>三、完整性定义及维护</h1><h2 id="一-完整性约束定义"><a href="#一-完整性约束定义" class="headerlink" title="(一)完整性约束定义"></a>(一)完整性约束定义</h2><p>增加约束  </p>
-<p>alter table table_name<br>add constraint constraint_name<br><br>  </p>
-<h3 id="1-实体完整性"><a href="#1-实体完整性" class="headerlink" title="(1)实体完整性"></a>(1)实体完整性</h3><p>可通过索引、unique约束等实现<br>eg1.为员工添加主码  </p>
+        <h2 id="一、插入数据"><a href="#一、插入数据" class="headerlink" title="一、插入数据"></a>一、插入数据</h2><h3 id="1-插入元组"><a href="#1-插入元组" class="headerlink" title="(1)插入元组"></a>(1)插入元组</h3><span id="more"></span>
 <blockquote>
-<p>alter table 员工表<br>add constraint pk_yg primary key(员工编号)  </p>
+<p>insert into table_name<br>[column_name…]<br>values<br>[value…]  </p>
 </blockquote>
-<p>eg2.为薪资表的薪级名称列添加unique约束  </p>
-<blockquote>
-<p>alter table 薪资表<br>add constraint u_xinziname unique(薪级名称)<br><br></p>
+<h3 id="2-插入子查询结果"><a href="#2-插入子查询结果" class="headerlink" title="(2)插入子查询结果"></a>(2)插入子查询结果</h3><h4 id="1、先建立表"><a href="#1、先建立表" class="headerlink" title="1、先建立表"></a>1、先建立表</h4><blockquote>
+<p>insert into table_name<br>[column…]<br>select …</p>
 </blockquote>
-<h3 id="2-用户自定义完整性"><a href="#2-用户自定义完整性" class="headerlink" title="(2)用户自定义完整性"></a>(2)用户自定义完整性</h3><p>可以使用default、check 实现<br>其中一个列只能有一个default约束，该约束只能定义在一个列上。check约束可以对多列的取值关系做约束。如果只对新插入的数据实现约束，则可以在add前加入 with nocheck<br><br></p>
-<h3 id="3-参照完整性"><a href="#3-参照完整性" class="headerlink" title="(3)参照完整性"></a>(3)参照完整性</h3><p>可以使用foreign key、触发器实现<br>eg.为员工表的薪级编号列添加外码约束，引用薪资表的薪级编号  </p>
-<blockquote>
-<p>alter table 员工表<br>add constraint fk_xinji<br>foreign key(薪级编号) references 薪资表(薪级编号)  </p>
+<h4 id="2、无需先建立表"><a href="#2、无需先建立表" class="headerlink" title="2、无需先建立表"></a>2、无需先建立表</h4><blockquote>
+<p>select [column…]<br>into table_name<br>from …</p>
 </blockquote>
 <br>
 
-<h2 id="二-完整性约束维护"><a href="#二-完整性约束维护" class="headerlink" title="(二)完整性约束维护"></a>(二)完整性约束维护</h2><p>主要是删除和修改约束<br>修改约束可以通过先删除再添加<br><br>  </p>
-<h1 id="四、索引定义及维护"><a href="#四、索引定义及维护" class="headerlink" title="四、索引定义及维护"></a>四、索引定义及维护</h1><p>基本格式  </p>
-<blockquote>
-<p>create<br>[unique] [clustered] [nonclustered]<br>index index_name<br>on table_name (column[asc|dsc][,···n])  </p>
+<h2 id="二、修改数据"><a href="#二、修改数据" class="headerlink" title="二、修改数据"></a>二、修改数据</h2><blockquote>
+<p>update table_name<br>set column_name = expression<br>[where ….]  </p>
 </blockquote>
-<p>(1)聚集索引：按照索引关键字顺序排列，表的物理顺序与索引关键字顺序相同。一个表上只有一个聚集索引。<br>(2)非聚集索引：表的物理顺序与索引关键字顺序不同。一个表上可以有多个聚集索引。<br>(3)唯一索引：唯一索引的索引关键字不允许重复。</p>
+<br>
+
+<h2 id="三、删除数据"><a href="#三、删除数据" class="headerlink" title="三、删除数据"></a>三、删除数据</h2><p>delete [from] table_name<br>[where …]</p>
+<br>
+
+<hr>
+<h2 id="一、定义视图"><a href="#一、定义视图" class="headerlink" title="一、定义视图"></a>一、定义视图</h2><blockquote>
+<p>create view view_name<br>[column_name…]<br>AS &lt;select…&gt;<br>[with check option]</p>
+</blockquote>
+<p>(1)<code>with check option</code> 表示通过视图进行更新操作时要保证更新数据满足子查询的条件表达式。<br>(2)以下情况必须指明视图列名</p>
+<ol>
+<li>子查询的某个目标列是聚合函数或列表达式  </li>
+<li>多表连接时出现同名列作为视图的列  </li>
+<li>需在视图中指定新列名代替子查询列名  </li>
+</ol>
+<br>
+
+<h2 id="二、删除视图"><a href="#二、删除视图" class="headerlink" title="二、删除视图"></a>二、删除视图</h2><p><code>drop view view_name</code><br>*注意删除的次序，先删除建立在其他表上的表，再删除”原始表”。  </p>
+<h2 id="三、查询视图"><a href="#三、查询视图" class="headerlink" title="三、查询视图"></a>三、查询视图</h2><p>与查基本表一致  </p>
+<h2 id="四、更新视图"><a href="#四、更新视图" class="headerlink" title="四、更新视图"></a>四、更新视图</h2><p>视图不存储数据，对其更新最终转换为对基本表的更新。<br>格式与更新基本表一致。</p>
 
       
     </div>
@@ -442,8 +419,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/05/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%BA%8C%E7%AB%A0%20%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="next" title="第二章-关系数据库">
-                <i class="fa fa-chevron-left"></i> 第二章-关系数据库
+              <a href="/2021/05/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2)/" rel="next" title="SQL语句(数据查询)">
+                <i class="fa fa-chevron-left"></i> SQL语句(数据查询)
               </a>
             
           </div>
@@ -452,8 +429,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2021/05/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2)/" rel="prev" title="第三章-SQL语句(数据查询)">
-                第三章-SQL语句(数据查询) <i class="fa fa-chevron-right"></i>
+              <a href="/2021/05/26/JavaWeb/%E5%AF%B9%E4%BA%8E-PreparedStatement-%E6%88%96-CallableStatement%EF%BC%8C%E6%96%B9%E6%B3%95-executeQuery-%E4%B8%8D%E8%83%BD%E5%B8%A6%E6%9C%89%E5%8F%82%E6%95%B0/" rel="prev" title="对于PreparedStatement或CallableStatement，方法executeQuery()不能带有参数">
+                对于PreparedStatement或CallableStatement，方法executeQuery()不能带有参数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -535,7 +512,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -590,7 +567,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E4%B9%89%E5%8F%8A%E7%BB%B4%E6%8A%A4"><span class="nav-number">1.</span> <span class="nav-text">一、数据库定义及维护</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">(一)数据库定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%B4%E6%8A%A4"><span class="nav-number">1.2.</span> <span class="nav-text">(二)数据库维护</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E8%A1%A8%E5%AE%9A%E4%B9%89%E5%8F%8A%E7%BB%B4%E6%8A%A4"><span class="nav-number">2.</span> <span class="nav-text">二、表定义及维护</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E8%A1%A8%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">(一)表定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-%E8%A1%A8%E7%BB%B4%E6%8A%A4"><span class="nav-number">2.2.</span> <span class="nav-text">(二)表维护</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%AE%8C%E6%95%B4%E6%80%A7%E5%AE%9A%E4%B9%89%E5%8F%8A%E7%BB%B4%E6%8A%A4"><span class="nav-number">3.</span> <span class="nav-text">三、完整性定义及维护</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">(一)完整性约束定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%9E%E4%BD%93%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-number">3.1.1.</span> <span class="nav-text">(1)实体完整性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-number">3.1.2.</span> <span class="nav-text">(2)用户自定义完整性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%8F%82%E7%85%A7%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-number">3.1.3.</span> <span class="nav-text">(3)参照完整性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F%E7%BB%B4%E6%8A%A4"><span class="nav-number">3.2.</span> <span class="nav-text">(二)完整性约束维护</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%B4%A2%E5%BC%95%E5%AE%9A%E4%B9%89%E5%8F%8A%E7%BB%B4%E6%8A%A4"><span class="nav-number">4.</span> <span class="nav-text">四、索引定义及维护</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">1.</span> <span class="nav-text">一、插入数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%8F%92%E5%85%A5%E5%85%83%E7%BB%84"><span class="nav-number">1.1.</span> <span class="nav-text">(1)插入元组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%8F%92%E5%85%A5%E5%AD%90%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C"><span class="nav-number">1.2.</span> <span class="nav-text">(2)插入子查询结果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E5%85%88%E5%BB%BA%E7%AB%8B%E8%A1%A8"><span class="nav-number">1.2.1.</span> <span class="nav-text">1、先建立表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E6%97%A0%E9%9C%80%E5%85%88%E5%BB%BA%E7%AB%8B%E8%A1%A8"><span class="nav-number">1.2.2.</span> <span class="nav-text">2、无需先建立表</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="nav-number">2.</span> <span class="nav-text">二、修改数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="nav-number">3.</span> <span class="nav-text">三、删除数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%AE%9A%E4%B9%89%E8%A7%86%E5%9B%BE"><span class="nav-number">4.</span> <span class="nav-text">一、定义视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%88%A0%E9%99%A4%E8%A7%86%E5%9B%BE"><span class="nav-number">5.</span> <span class="nav-text">二、删除视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%9F%A5%E8%AF%A2%E8%A7%86%E5%9B%BE"><span class="nav-number">6.</span> <span class="nav-text">三、查询视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%9B%B4%E6%96%B0%E8%A7%86%E5%9B%BE"><span class="nav-number">7.</span> <span class="nav-text">四、更新视图</span></a></li></ol></div>
             
 
           </div>

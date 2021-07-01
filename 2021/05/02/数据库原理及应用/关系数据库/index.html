@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="hello world">
+<meta name="description" content="一、关系的完整性 实体完整性：对主码的约束，主属性不能为空。   参照完整性：对外码的约束；关系与关系之间存在引用，外码，参照完整性规则。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第四章-Transact-SQL编程(游标)">
-<meta property="og:url" content="http://example.com/2021/05/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E5%9B%9B%E7%AB%A0-Transact-SQL%E7%BC%96%E7%A8%8B%EF%BC%88%E6%B8%B8%E6%A0%87%EF%BC%89/index.html">
+<meta property="og:title" content="关系数据库">
+<meta property="og:url" content="http://example.com/2021/05/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
 <meta property="og:site_name" content="chikaze&#39;blog">
-<meta property="og:description" content="hello world">
+<meta property="og:description" content="一、关系的完整性 实体完整性：对主码的约束，主属性不能为空。   参照完整性：对外码的约束；关系与关系之间存在引用，外码，参照完整性规则。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-05-24T06:24:44.000Z">
-<meta property="article:modified_time" content="2021-05-24T06:43:19.436Z">
+<meta property="og:image" content="http://example.com/img/%E9%80%89%E6%8B%A9%E8%BF%90%E7%AE%97.png">
+<meta property="og:image" content="http://example.com/img/%E6%8A%95%E5%BD%B1%E8%BF%90%E7%AE%97.jpg">
+<meta property="og:image" content="http://example.com/img/%E9%99%A4%E8%BF%90%E7%AE%97.jpg">
+<meta property="article:published_time" content="2021-05-01T17:10:23.000Z">
+<meta property="article:modified_time" content="2021-07-01T13:43:09.496Z">
 <meta property="article:author" content="chikaze">
 <meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/%E9%80%89%E6%8B%A9%E8%BF%90%E7%AE%97.png">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/2021/05/24/数据库原理及应用/第四章-Transact-SQL编程（游标）/"/>
+  <link rel="canonical" href="http://example.com/2021/05/02/数据库原理及应用/关系数据库/"/>
 
 
 
 
 
-  <title>第四章-Transact-SQL编程(游标) | chikaze'blog</title>
+  <title>关系数据库 | chikaze'blog</title>
   
 
 
@@ -287,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E5%9B%9B%E7%AB%A0-Transact-SQL%E7%BC%96%E7%A8%8B%EF%BC%88%E6%B8%B8%E6%A0%87%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/02/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E5%85%B3%E7%B3%BB%E6%95%B0%E6%8D%AE%E5%BA%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -304,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">第四章-Transact-SQL编程(游标)</h1>
+          <h1 class="post-title" itemprop="name headline">关系数据库</h1>
         
 
         <div class="post-meta">
@@ -316,8 +320,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-24T14:24:44+08:00">
-                2021-05-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-02T01:10:23+08:00">
+                2021-05-02
               </time>
             
 
@@ -326,6 +330,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库原理及应用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -354,7 +380,43 @@
       
 
       
-        
+        <h1 id="一、关系的完整性"><a href="#一、关系的完整性" class="headerlink" title="一、关系的完整性"></a>一、关系的完整性</h1><ol>
+<li>实体完整性：对主码的约束，主属性不能为空。  </li>
+<li>参照完整性：对外码的约束；关系与关系之间存在引用，外码，参照完整性规则。 <span id="more"></span>
+<blockquote>
+<p>构成外码的条件：<br>(1)本关系的一个(组)属性；<br>(2)与另一个关系主码相对应<br>(3)不是本关系的主码  </p>
+<p>外码何时可以取空？<br>一般来说，外码可以取空值也可以不取空值。当外码在所在关系中充当主属性的地位的时候则绝对不可以取空。(也是为了保证实体完整性)</p>
+</blockquote>
+</li>
+<li>用户定义的完整性规则  <br></li>
+</ol>
+<h1 id="二、关系代数"><a href="#二、关系代数" class="headerlink" title="二、关系代数"></a>二、关系代数</h1><ol>
+<li>传统的集合运算<br>(1)并  (2)交  (3)差  (4)笛卡尔积  </li>
+<li>专门的关系运算<br>(1)选择运算：从行的角度<br><img src="/../../img/%E9%80%89%E6%8B%A9%E8%BF%90%E7%AE%97.png" alt="选择运算" title="选择运算"><br>  
+(2)投影运算：从列的角度  
+eg.查询商品的名称和售价</li>
+</ol>
+<p><img src="/../../img/%E6%8A%95%E5%BD%B1%E8%BF%90%E7%AE%97.jpg" alt="投影运算" title="投影运算"></p>
+<br>
+&emsp;&emsp; (3)连接运算  
+(i)θ连接运算  
+步骤：a.求RxS找笛卡尔积  b.选择满足关系的元组  
+(其中θ可以为≥、≤、＞、＜、≠)  
+(ii)等值连接运算  
+(iii)自然连接运算：从等值连接中去掉重复的列  
+<br>
+<br>
+&emsp;&emsp;(4)除运算  
+
+<p><img src="/../../img/%E9%99%A4%E8%BF%90%E7%AE%97.jpg" alt="除运算" title="除运算">  </p>
+<br>  
+
+<p>tips：</p>
+<ol>
+<li>关系模式是型(静态)，关系是值(动态)</li>
+<li>关系数据模型的数据操作主要有查询、插入、删除、修改操作。  </li>
+</ol>
+
       
     </div>
     
@@ -384,8 +446,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/05/23/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E7%AC%AC%E4%B8%89%E7%AB%A0-SQL%E8%AF%AD%E5%8F%A5(%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%94%B9%E3%80%81%E8%A7%86%E5%9B%BE)/" rel="next" title="第三章-SQL语句(数据更改、视图)">
-                <i class="fa fa-chevron-left"></i> 第三章-SQL语句(数据更改、视图)
+              <a href="/2021/05/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0/" rel="next" title="数据库系统概述">
+                <i class="fa fa-chevron-left"></i> 数据库系统概述
               </a>
             
           </div>
@@ -394,8 +456,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2021/05/26/JavaWeb/%E5%AF%B9%E4%BA%8E-PreparedStatement-%E6%88%96-CallableStatement%EF%BC%8C%E6%96%B9%E6%B3%95-executeQuery-%E4%B8%8D%E8%83%BD%E5%B8%A6%E6%9C%89%E5%8F%82%E6%95%B0/" rel="prev" title="对于PreparedStatement或CallableStatement，方法executeQuery()不能带有参数">
-                对于PreparedStatement或CallableStatement，方法executeQuery()不能带有参数 <i class="fa fa-chevron-right"></i>
+              <a href="/2021/05/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/SQL%E8%AF%AD%E5%8F%A5(%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%BB%B4%E6%8A%A4)/" rel="prev" title="SQL语句(定义与维护)">
+                SQL语句(定义与维护) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -448,8 +510,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -468,7 +539,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -513,6 +584,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">一、关系的完整性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">二、关系代数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
