@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>清除浮动的四种方法</title>
+    <url>/2021/07/06/CSS/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="一、为什么要清除浮动"><a href="#一、为什么要清除浮动" class="headerlink" title="一、为什么要清除浮动"></a>一、为什么要清除浮动</h1><span id="more"></span>
+<p>由于父级盒子很多情况下，不方便给高度，但是子盒子浮动又不占有位置，最后父级盒子高度为 0 时，就会<br>影响下面的标准流盒子。*由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响    </p>
+<h1 id="二、清除浮动的本质"><a href="#二、清除浮动的本质" class="headerlink" title="二、清除浮动的本质"></a>二、清除浮动的本质</h1><ol>
+<li> 清除浮动的本质是清除浮动元素造成的影响</li>
+<li> 如果父盒子本身有高度，则不需要清除浮动</li>
+<li> 清除浮动之后，父级就会根据浮动的子盒子自动检测高度。父级有了高度，就不会影响下面的标准流了  </li>
+</ol>
+<h1 id="三、清除浮动"><a href="#三、清除浮动" class="headerlink" title="三、清除浮动"></a>三、清除浮动</h1><table>
+<thead>
+<tr>
+<th align="left">属性值</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">left</td>
+<td align="left">清除左侧浮动影响</td>
+</tr>
+<tr>
+<td align="left">right</td>
+<td align="left">清除右侧浮动影响</td>
+</tr>
+<tr>
+<td align="left">both</td>
+<td align="left">清除两侧浮动影响</td>
+</tr>
+</tbody></table>
+<h1 id="四、清除浮动方法"><a href="#四、清除浮动方法" class="headerlink" title="四、清除浮动方法"></a>四、清除浮动方法</h1><ol>
+<li>额外标签法也称为隔墙法，是 W3C 推荐的做法。</li>
+<li>父级添加overflow属性</li>
+<li>父级添加after伪元素</li>
+<li>父级添加双伪元素  </li>
+</ol>
+<h2 id="1-标签法"><a href="#1-标签法" class="headerlink" title="(1)标签法"></a>(1)标签法</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        .father &#123;</span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>: violet;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .father .son &#123;</span><br><span class="line"><span class="css">            <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">400px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>: tomato;</span></span><br><span class="line"><span class="css">            <span class="attribute">margin-right</span>: <span class="number">20px</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .father .son2 &#123;</span><br><span class="line"><span class="css">            <span class="attribute">float</span>: left;</span></span><br><span class="line"><span class="css">            <span class="attribute">width</span>: <span class="number">400px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>: tomato;</span></span><br><span class="line">        &#125;</span><br><span class="line">        .out&#123;</span><br><span class="line"><span class="css">            <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="css">            <span class="attribute">background-color</span>: yellowgreen;</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;father&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 添加一个块元素 用的额外标签法！ --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- &lt;div style=&quot;clear: both&quot;&gt;&lt;/div&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;out&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>父元素未设置宽高，不清除浮动带来的影响（父消失）<br><img src="/../../img/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A81.png" alt="浮动" title="浮动"><br>取消代码中的注释 则清除浮动，父随子的高度变化而变化<br><img src="/../../img/%E6%B5%AE%E5%8A%A82.png" alt="浮动" title="浮动">  </p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Servlet编码没问题，但Network下servlet中的preview无显示</title>
     <url>/2021/05/26/JavaWeb/Servlet%E7%BC%96%E7%A0%81%E6%B2%A1%E9%97%AE%E9%A2%98%EF%BC%8C%E4%BD%86Network%E4%B8%8Bservlet%E4%B8%AD%E7%9A%84preview%E6%97%A0%E6%98%BE%E7%A4%BA/</url>
     <content><![CDATA[<h2 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h2><span id="more"></span>
@@ -9,6 +55,19 @@
 <h3 id="3-可以查看到了"><a href="#3-可以查看到了" class="headerlink" title="3.可以查看到了"></a>3.可以查看到了</h3><p><img src="/.../.../../../../../img/JavaWeb-Q3.png" alt="p3" title="p3">  </p>
 <h2 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h2><p>可能误点击到了filter</p>
 ]]></content>
+      <tags>
+        <tag>JavaWeb-Q</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>idea连接sqlserver数据库</title>
+    <url>/2021/05/31/JavaWeb/idea%E8%BF%9E%E6%8E%A5sqlserver%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <content><![CDATA[<p>确定数据库的类型 SQL serve<br>数据库连接 驱动类型、数据库地址、数据库的用户和密码  </p>
+<span id="more"></span>
+<blockquote>
+<p>1.建立连接<br>2.输送sql语句<br>3.得到sql语句 返回结果  </p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> String drivername = <span class="string">&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;</span>;</span><br><span class="line"><span class="comment">//数据库使用实例情况</span></span><br><span class="line"><span class="comment">//String dburl = &quot;jdbc:sqlserver://localhost:1433;instancename = SQLEXPRESS;(自己的) DatabaseName= test1; integratedSecurity=true;(表示windows验证)&quot;;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//数据库默认实例情况</span></span><br><span class="line">        String dburl = <span class="string">&quot;jdbc:sqlserver://localhost:1433;DatabaseName=test1;&quot;</span>;</span><br><span class="line">        String dbuser = <span class="string">&quot;sa&quot;</span>;</span><br><span class="line">        String dbpwd = <span class="string">&quot;sa&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Class.forName(drivername);</span><br><span class="line">            Connection conn = DriverManager.getConnection(dburl,dbuser,dbpwd);</span><br><span class="line">            System.out.println(<span class="string">&quot;数据库连接成功！&quot;</span>);</span><br><span class="line">            Statement stmt = conn.createStatement();</span><br><span class="line">            String sql = <span class="string">&quot;select * from [demo]&quot;</span>;</span><br><span class="line">            ResultSet rs = stmt.executeQuery(sql);</span><br><span class="line">            <span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">                System.out.println(rs.getString(<span class="string">&quot;id&quot;</span>)+ <span class="string">&quot; &quot;</span>+rs.getString(<span class="string">&quot;username&quot;</span>)+ <span class="string">&quot; &quot;</span> +rs.getString(<span class="string">&quot;password&quot;</span>)+ <span class="string">&quot; &quot;</span> +rs.getString(<span class="string">&quot;phone&quot;</span>));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            System.out.println(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>JavaWeb-Q</tag>
       </tags>
@@ -29,16 +88,38 @@
       </tags>
   </entry>
   <entry>
-    <title>idea连接sqlserver数据库</title>
-    <url>/2021/05/31/JavaWeb/idea%E8%BF%9E%E6%8E%A5sqlserver%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
-    <content><![CDATA[<p>确定数据库的类型 SQL serve<br>数据库连接 驱动类型、数据库地址、数据库的用户和密码  </p>
-<span id="more"></span>
-<blockquote>
-<p>1.建立连接<br>2.输送sql语句<br>3.得到sql语句 返回结果  </p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> String drivername = <span class="string">&quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;</span>;</span><br><span class="line"><span class="comment">//数据库使用实例情况</span></span><br><span class="line"><span class="comment">//String dburl = &quot;jdbc:sqlserver://localhost:1433;instancename = SQLEXPRESS;(自己的) DatabaseName= test1; integratedSecurity=true;(表示windows验证)&quot;;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//数据库默认实例情况</span></span><br><span class="line">        String dburl = <span class="string">&quot;jdbc:sqlserver://localhost:1433;DatabaseName=test1;&quot;</span>;</span><br><span class="line">        String dbuser = <span class="string">&quot;sa&quot;</span>;</span><br><span class="line">        String dbpwd = <span class="string">&quot;sa&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Class.forName(drivername);</span><br><span class="line">            Connection conn = DriverManager.getConnection(dburl,dbuser,dbpwd);</span><br><span class="line">            System.out.println(<span class="string">&quot;数据库连接成功！&quot;</span>);</span><br><span class="line">            Statement stmt = conn.createStatement();</span><br><span class="line">            String sql = <span class="string">&quot;select * from [demo]&quot;</span>;</span><br><span class="line">            ResultSet rs = stmt.executeQuery(sql);</span><br><span class="line">            <span class="keyword">while</span>(rs.next())&#123;</span><br><span class="line">                System.out.println(rs.getString(<span class="string">&quot;id&quot;</span>)+ <span class="string">&quot; &quot;</span>+rs.getString(<span class="string">&quot;username&quot;</span>)+ <span class="string">&quot; &quot;</span> +rs.getString(<span class="string">&quot;password&quot;</span>)+ <span class="string">&quot; &quot;</span> +rs.getString(<span class="string">&quot;phone&quot;</span>));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            System.out.println(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    <title>NotePad++右键无提示</title>
+    <url>/2021/06/21/extra/NotePad-%E5%8F%B3%E9%94%AE%E6%97%A0%E6%8F%90%E7%A4%BA/</url>
+    <content><![CDATA[<ol>
+<li>windows + R运行，在运行窗口中输入 regedit，进入注册表编辑器    <span id="more"></span></li>
+<li>在左边的地址栏中输入\HKEY_CLASSES_ROOT*\shell  </li>
+<li>在shell上右键–新建项，命名为edit with notepad++  </li>
+<li>在新建的项edit with notepad++上右键，然后新建一个项，命名为command，新建了command之后选中command项会发现右边有相应的值，双击默认进行修改  </li>
+<li>双击默认后对其值进行修改，先写notepad++的安装路径，然后写上“%1”，点击确定，在任意文件上右键都会有edit with notepad++选项  </li>
+</ol>
+<p><img src="/../../img/notepad++.png" alt="notepad++" title="notepad++">  </p>
+]]></content>
+      <categories>
+        <category>extra</category>
+      </categories>
       <tags>
-        <tag>JavaWeb-Q</tag>
+        <tag>tips</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows快捷键</title>
+    <url>/2021/06/20/extra/Windows%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<h1 id="Windows快捷键"><a href="#Windows快捷键" class="headerlink" title="Windows快捷键"></a>Windows快捷键</h1><p><kbd>Ctrl</kbd>+<kbd>C</kbd> ：复制<br><kbd>Ctrl</kbd>+<kbd>V</kbd> ：粘贴<br><kbd>Ctrl</kbd>+<kbd>X</kbd> ：剪切  </p>
+<span id="more"></span>
+<p><kbd>Ctrl</kbd>+<kbd>Z</kbd> ：撤销<br><kbd>Ctrl</kbd>+<kbd>F</kbd> ：寻找<br><kbd>Ctrl</kbd>+<kbd>Home</kbd> ：当前窗口或文档的最上端<br><kbd>Ctrl</kbd>+<kbd>End</kbd> ：当前窗口或文档的最下端<br><kbd>Ctrl</kbd>+<kbd>←</kbd> ：实现两个窗口对比<br><kbd>Ctrl</kbd>+<kbd>↓</kbd> ：缩小窗口/向下还原窗口<br><kbd>Ctrl</kbd>+<kbd>A</kbd> ：全选<br><kbd>Ctrl</kbd>+<kbd>S</kbd> ：保存  </p>
+<p><kbd>Alt</kbd>+<kbd>F4</kbd> ：关闭窗口（下班快乐键）<br><kbd>Alt</kbd>+<kbd>Tab</kbd> ：快速切换多窗口  </p>
+<p><kbd>Win</kbd>+<kbd>N</kbd> ：调用便签<br><kbd>Win</kbd>+<kbd>D</kbd> ：显示桌面<br><kbd>Win</kbd>+<kbd>R</kbd> ：调用运行窗口<br><kbd>Win</kbd>+<kbd>M</kbd> ：最小化所有窗口<br><kbd>Win</kbd>+<kbd>Tab</kbd> ：显示打开的所有窗口<br><kbd>Win</kbd>+<kbd>L</kbd> ：锁定电脑<br><kbd>Win</kbd>+<kbd>U</kbd> ：打开系统设置<br><kbd>Win</kbd>+<kbd>E</kbd> ：打开文件管理器/我的电脑<br><kbd>Win</kbd>+<kbd>T</kbd> ：任务栏上固定的应用之间相互切换<br><kbd>Win</kbd>+<kbd>1/2/…N</kbd> ：任务栏上固定的应用之间相互切换<br><kbd>Win</kbd>+<kbd>N</kbd> ：调用便签</p>
+]]></content>
+      <categories>
+        <category>extra</category>
+      </categories>
+      <tags>
+        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
@@ -77,173 +158,6 @@
 <p>/  :参数斜杠<br>\  :文件斜杠</p>
 </li>
 </ol>
-]]></content>
-      <categories>
-        <category>extra</category>
-      </categories>
-      <tags>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NotePad++右键无提示</title>
-    <url>/2021/06/21/extra/NotePad-%E5%8F%B3%E9%94%AE%E6%97%A0%E6%8F%90%E7%A4%BA/</url>
-    <content><![CDATA[<ol>
-<li>windows + R运行，在运行窗口中输入 regedit，进入注册表编辑器    <span id="more"></span></li>
-<li>在左边的地址栏中输入\HKEY_CLASSES_ROOT*\shell  </li>
-<li>在shell上右键–新建项，命名为edit with notepad++  </li>
-<li>在新建的项edit with notepad++上右键，然后新建一个项，命名为command，新建了command之后选中command项会发现右边有相应的值，双击默认进行修改  </li>
-<li>双击默认后对其值进行修改，先写notepad++的安装路径，然后写上“%1”，点击确定，在任意文件上右键都会有edit with notepad++选项  </li>
-</ol>
-<p><img src="/../../img/notepad++.png" alt="notepad++" title="notepad++">  </p>
-]]></content>
-      <categories>
-        <category>extra</category>
-      </categories>
-      <tags>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>idea快捷键</title>
-    <url>/2021/06/20/extra/idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
-    <content><![CDATA[<h1 id="一、Ctrl-快捷键"><a href="#一、Ctrl-快捷键" class="headerlink" title="一、Ctrl 快捷键"></a>一、Ctrl 快捷键</h1><span id="more"></span>
-<table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Ctrl + F</td>
-<td>在当前文件进行文本查找</td>
-</tr>
-<tr>
-<td>Ctrl + R</td>
-<td>在当前文件进行文本替换</td>
-</tr>
-<tr>
-<td>Ctrl + Z</td>
-<td>撤销</td>
-</tr>
-<tr>
-<td>Ctrl + Y</td>
-<td>删除光标所在行 或 删除选中的行</td>
-</tr>
-<tr>
-<td>Ctrl + X</td>
-<td>剪切光标所在行 或 剪切选择内容</td>
-</tr>
-<tr>
-<td>Ctrl + D</td>
-<td>复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面</td>
-</tr>
-<tr>
-<td>Ctrl + W</td>
-<td>递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围</td>
-</tr>
-<tr>
-<td>Ctrl + H</td>
-<td>显示当前类的层次结构</td>
-</tr>
-<tr>
-<td>Ctrl + O</td>
-<td>选择可重写的方法</td>
-</tr>
-<tr>
-<td>Ctrl + I</td>
-<td>选择可继承的方法</td>
-</tr>
-<tr>
-<td>Ctrl + Space</td>
-<td>基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 Ctrl + 逗号</td>
-</tr>
-<tr>
-<td>Ctrl + 左方向键</td>
-<td>光标跳转到当前单词 / 中文句的左侧开头位置</td>
-</tr>
-<tr>
-<td>Ctrl + 右方向键</td>
-<td>光标跳转到当前单词 / 中文句的右侧开头位置</td>
-</tr>
-<tr>
-<td>Ctrl + Delete</td>
-<td>删除光标后面的单词或是中文句</td>
-</tr>
-<tr>
-<td>Ctrl + BackSpace</td>
-<td>删除光标前面的单词或是中文句</td>
-</tr>
-<tr>
-<td>Ctrl + Alt + L</td>
-<td>缩进</td>
-</tr>
-<tr>
-<td>Ctrl + Alt + V</td>
-<td>自动补全类和对象名</td>
-</tr>
-<tr>
-<td>Ctrl + Alt + T</td>
-<td>自动生成代码块包裹</td>
-</tr>
-<tr>
-<td>Ctrl + /</td>
-<td>单行注释</td>
-</tr>
-<tr>
-<td>Ctrl + shift + /</td>
-<td>多行注释</td>
-</tr>
-</tbody></table>
-<h1 id="二、Alt-快捷键"><a href="#二、Alt-快捷键" class="headerlink" title="二、Alt 快捷键"></a>二、Alt 快捷键</h1><table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>介绍</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Alt + Enter</td>
-<td>IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同</td>
-</tr>
-<tr>
-<td>Alt + Insert</td>
-<td>代码自动生成，如生成对象的 set / get 方法，构造函数，toString() 等</td>
-</tr>
-</tbody></table>
-<h1 id="三、F系列"><a href="#三、F系列" class="headerlink" title="三、F系列"></a>三、F系列</h1><table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>F2或者shift+F2</td>
-<td>高亮错误或警告快速定位</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>extra</category>
-      </categories>
-      <tags>
-        <tag>tips</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows快捷键</title>
-    <url>/2021/06/20/extra/Windows%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
-    <content><![CDATA[<h1 id="Windows快捷键"><a href="#Windows快捷键" class="headerlink" title="Windows快捷键"></a>Windows快捷键</h1><p><kbd>Ctrl</kbd>+<kbd>C</kbd> ：复制<br><kbd>Ctrl</kbd>+<kbd>V</kbd> ：粘贴<br><kbd>Ctrl</kbd>+<kbd>X</kbd> ：剪切  </p>
-<span id="more"></span>
-<p><kbd>Ctrl</kbd>+<kbd>Z</kbd> ：撤销<br><kbd>Ctrl</kbd>+<kbd>F</kbd> ：寻找<br><kbd>Ctrl</kbd>+<kbd>Home</kbd> ：当前窗口或文档的最上端<br><kbd>Ctrl</kbd>+<kbd>End</kbd> ：当前窗口或文档的最下端<br><kbd>Ctrl</kbd>+<kbd>←</kbd> ：实现两个窗口对比<br><kbd>Ctrl</kbd>+<kbd>↓</kbd> ：缩小窗口/向下还原窗口<br><kbd>Ctrl</kbd>+<kbd>A</kbd> ：全选<br><kbd>Ctrl</kbd>+<kbd>S</kbd> ：保存  </p>
-<p><kbd>Alt</kbd>+<kbd>F4</kbd> ：关闭窗口（下班快乐键）<br><kbd>Alt</kbd>+<kbd>Tab</kbd> ：快速切换多窗口  </p>
-<p><kbd>Win</kbd>+<kbd>N</kbd> ：调用便签<br><kbd>Win</kbd>+<kbd>D</kbd> ：显示桌面<br><kbd>Win</kbd>+<kbd>R</kbd> ：调用运行窗口<br><kbd>Win</kbd>+<kbd>M</kbd> ：最小化所有窗口<br><kbd>Win</kbd>+<kbd>Tab</kbd> ：显示打开的所有窗口<br><kbd>Win</kbd>+<kbd>L</kbd> ：锁定电脑<br><kbd>Win</kbd>+<kbd>U</kbd> ：打开系统设置<br><kbd>Win</kbd>+<kbd>E</kbd> ：打开文件管理器/我的电脑<br><kbd>Win</kbd>+<kbd>T</kbd> ：任务栏上固定的应用之间相互切换<br><kbd>Win</kbd>+<kbd>1/2/…N</kbd> ：任务栏上固定的应用之间相互切换<br><kbd>Win</kbd>+<kbd>N</kbd> ：调用便签</p>
 ]]></content>
       <categories>
         <category>extra</category>
@@ -400,6 +314,138 @@
       </categories>
       <tags>
         <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>idea快捷键</title>
+    <url>/2021/06/20/extra/idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<h1 id="一、Ctrl-快捷键"><a href="#一、Ctrl-快捷键" class="headerlink" title="一、Ctrl 快捷键"></a>一、Ctrl 快捷键</h1><span id="more"></span>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ctrl + F</td>
+<td>在当前文件进行文本查找</td>
+</tr>
+<tr>
+<td>Ctrl + R</td>
+<td>在当前文件进行文本替换</td>
+</tr>
+<tr>
+<td>Ctrl + Z</td>
+<td>撤销</td>
+</tr>
+<tr>
+<td>Ctrl + Y</td>
+<td>删除光标所在行 或 删除选中的行</td>
+</tr>
+<tr>
+<td>Ctrl + X</td>
+<td>剪切光标所在行 或 剪切选择内容</td>
+</tr>
+<tr>
+<td>Ctrl + D</td>
+<td>复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面</td>
+</tr>
+<tr>
+<td>Ctrl + W</td>
+<td>递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围</td>
+</tr>
+<tr>
+<td>Ctrl + H</td>
+<td>显示当前类的层次结构</td>
+</tr>
+<tr>
+<td>Ctrl + O</td>
+<td>选择可重写的方法</td>
+</tr>
+<tr>
+<td>Ctrl + I</td>
+<td>选择可继承的方法</td>
+</tr>
+<tr>
+<td>Ctrl + Space</td>
+<td>基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 Ctrl + 逗号</td>
+</tr>
+<tr>
+<td>Ctrl + 左方向键</td>
+<td>光标跳转到当前单词 / 中文句的左侧开头位置</td>
+</tr>
+<tr>
+<td>Ctrl + 右方向键</td>
+<td>光标跳转到当前单词 / 中文句的右侧开头位置</td>
+</tr>
+<tr>
+<td>Ctrl + Delete</td>
+<td>删除光标后面的单词或是中文句</td>
+</tr>
+<tr>
+<td>Ctrl + BackSpace</td>
+<td>删除光标前面的单词或是中文句</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + L</td>
+<td>缩进</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + V</td>
+<td>自动补全类和对象名</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + T</td>
+<td>自动生成代码块包裹</td>
+</tr>
+<tr>
+<td>Ctrl + /</td>
+<td>单行注释</td>
+</tr>
+<tr>
+<td>Ctrl + shift + /</td>
+<td>多行注释</td>
+</tr>
+</tbody></table>
+<h1 id="二、Alt-快捷键"><a href="#二、Alt-快捷键" class="headerlink" title="二、Alt 快捷键"></a>二、Alt 快捷键</h1><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Alt + Enter</td>
+<td>IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同</td>
+</tr>
+<tr>
+<td>Alt + Insert</td>
+<td>代码自动生成，如生成对象的 set / get 方法，构造函数，toString() 等</td>
+</tr>
+</tbody></table>
+<h1 id="三、F系列"><a href="#三、F系列" class="headerlink" title="三、F系列"></a>三、F系列</h1><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>F2或者shift+F2</td>
+<td>高亮错误或警告快速定位</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>extra</category>
+      </categories>
+      <tags>
+        <tag>tips</tag>
       </tags>
   </entry>
   <entry>
