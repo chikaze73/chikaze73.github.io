@@ -64,7 +64,7 @@
     <title>清除浮动的四种方法</title>
     <url>/2021/07/06/CSS/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h1 id="一、为什么要清除浮动"><a href="#一、为什么要清除浮动" class="headerlink" title="一、为什么要清除浮动"></a>一、为什么要清除浮动</h1><span id="more"></span>
-<p>由于父级盒子很多情况下，不方便给高度，但是子盒子浮动又不占有位置，最后父级盒子高度为 0 时，就会<br>影响下面的标准流盒子。*由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响    </p>
+<p>由于父级盒子很多情况下，不方便给高度，但是子盒子浮动又不占有位置，最后父级盒子高度为 0 时，就会影响下面的标准流盒子。*由于浮动元素不再占用原文档流的位置，所以它会对后面的元素排版产生影响    </p>
 <h1 id="二、清除浮动的本质"><a href="#二、清除浮动的本质" class="headerlink" title="二、清除浮动的本质"></a>二、清除浮动的本质</h1><ol>
 <li> 清除浮动的本质是清除浮动元素造成的影响</li>
 <li> 如果父盒子本身有高度，则不需要清除浮动</li>
@@ -756,6 +756,21 @@ eg.查询商品的名称和售价</li>
       </categories>
       <tags>
         <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>溢出的文字用用省略号显示</title>
+    <url>/2021/07/10/CSS/%E6%BA%A2%E5%87%BA%E7%9A%84%E6%96%87%E5%AD%97%E7%94%A8%E7%94%A8%E7%9C%81%E7%95%A5%E5%8F%B7%E6%98%BE%E7%A4%BA/</url>
+    <content><![CDATA[<h1 id="一、单行文本"><a href="#一、单行文本" class="headerlink" title="一、单行文本"></a>一、单行文本</h1><span id="more"></span>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">/*1. 先强制一行内显示文本*/</span><br><span class="line"> white-space: nowrap; （ 默认 normal 自动换行）</span><br><span class="line"> /*2. 超出的部分隐藏*/</span><br><span class="line"> overflow: hidden;</span><br><span class="line"> /*3. 文字用省略号替代超出的部分*/</span><br><span class="line"> text-overflow: ellipsis</span><br></pre></td></tr></table></figure>
+
+<h1 id="二、多行文本"><a href="#二、多行文本" class="headerlink" title="二、多行文本"></a>二、多行文本</h1><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">overflow: hidden;</span><br><span class="line">text-overflow: ellipsis;</span><br><span class="line">/* 弹性伸缩盒子模型显示 */</span><br><span class="line">display: -webkit-box;</span><br><span class="line">/* 限制在一个块元素显示的文本的行数 */</span><br><span class="line">-webkit-line-clamp: 2;</span><br><span class="line">/* 设置或检索伸缩盒对象的子元素的排列方式 */</span><br><span class="line">-webkit-box-orient: vertical;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
       </tags>
   </entry>
 </search>
