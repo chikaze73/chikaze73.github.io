@@ -285,6 +285,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/11/CSS/%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8img%E6%A0%87%E7%AD%BE%E3%80%81%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="chikaze'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/07/11/CSS/%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8img%E6%A0%87%E7%AD%BE%E3%80%81%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87/" itemprop="url">什么时候用img标签、背景图片</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-07-11T22:13:21+08:00">
+                2021-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="一、区别"><a href="#一、区别" class="headerlink" title="一、区别"></a>一、区别</h2><blockquote>
+<p>1、img是html标签，占位，background-image是CSS样式，不占位。<br>2、在网页加载过程中，img作为网页结构内容的一部分，会在加载结构的过程中加载；而background-image作为css样式的一部分，会在结构加载完成后开始加载。(若引入了一个很大的图片，在这个图片下载完成之前，img后面的内容都不会显示，而如果用css引入同样的图片，网页结构和内容加载完成之后，才开始加载背景图片，不会影响浏览网页内容。)<br>3、背景图片在加载失败或路径找不到时，不会显示图片标记,img标签在加载失败或找不到路径时，显示一个撕裂的小图标标记。  </p>
+</blockquote>
+<h2 id="二、各自使用"><a href="#二、各自使用" class="headerlink" title="二、各自使用"></a>二、各自使用</h2><h3 id="1-img标签"><a href="#1-img标签" class="headerlink" title="(1)img标签"></a>(1)img标签</h3><ol>
+<li>html结构的一部分</li>
+<li>展示从后台传过来的数据</li>
+<li>对图片进行缩放操作</li>
+<li>利于搜索引擎搜索时</li>
+<li>有明确的语义化要求</li>
+<li>图片作为页面的组成部分而不是修饰部分</li>
+<li>显示图片只给定宽或高且不能截断图片，并且保证图片宽高  </li>
+</ol>
+<h3 id="2-background-image"><a href="#2-background-image" class="headerlink" title="(2)background-image"></a>(2)background-image</h3><ol>
+<li>CSS样式中的一部分</li>
+<li>图像代替文本使用时</li>
+<li>缩短下载时间时</li>
+<li>为不同的屏幕分辨率展示不同的图像时(media查询时使用背景图)</li>
+<li>作为背景图片</li>
+<li>禁止用户保存图片(点击鼠标右键另存为操作)</li>
+<li>允许图片拉伸，平铺，截取等情况</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/10/CSS/%E6%BA%A2%E5%87%BA%E7%9A%84%E6%96%87%E5%AD%97%E7%94%A8%E7%94%A8%E7%9C%81%E7%95%A5%E5%8F%B7%E6%98%BE%E7%A4%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1544,130 +1706,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/26/JavaWeb/%E5%AF%B9%E4%BA%8E-PreparedStatement-%E6%88%96-CallableStatement%EF%BC%8C%E6%96%B9%E6%B3%95-executeQuery-%E4%B8%8D%E8%83%BD%E5%B8%A6%E6%9C%89%E5%8F%82%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="chikaze'blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/05/26/JavaWeb/%E5%AF%B9%E4%BA%8E-PreparedStatement-%E6%88%96-CallableStatement%EF%BC%8C%E6%96%B9%E6%B3%95-executeQuery-%E4%B8%8D%E8%83%BD%E5%B8%A6%E6%9C%89%E5%8F%82%E6%95%B0/" itemprop="url">对于PreparedStatement或CallableStatement，方法executeQuery()不能带有参数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-26T21:38:22+08:00">
-                2021-05-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Q：提示 对于 PreparedStatement 或 CallableStatement，方法 executeQuery() 不能带有参数  </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2021/05/26/JavaWeb/%E5%AF%B9%E4%BA%8E-PreparedStatement-%E6%88%96-CallableStatement%EF%BC%8C%E6%96%B9%E6%B3%95-executeQuery-%E4%B8%8D%E8%83%BD%E5%B8%A6%E6%9C%89%E5%8F%82%E6%95%B0/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1722,7 +1760,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
